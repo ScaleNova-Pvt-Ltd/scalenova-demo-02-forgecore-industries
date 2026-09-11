@@ -1,0 +1,14 @@
+name = "scalenova-demo-02-forgecore-industries"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "./"
+binding = "ASSETS"
+
+[vars]
+ENVIRONMENT = "production"
+DEMO_ID = "DEMO-02"
+CLIENT_NAME = "ForgeCore Industries"
+INDUSTRY = "Manufacturing & Industrial SMEs"
+PRIMARY_DOMAIN = "demo2.scalenovasys.com"
