@@ -1,52 +1,60 @@
 /**
  * ScaleNova Systems — Client API Dispatcher (src/services/api.js)
- * Demo 02: ForgeCore Industries
+ * Demo: ForgeCore Industries (DEMO-02)
+ * All 5 websites connect to ONE shared Apps Script Web App URL.
  */
 
 window.ScaleNovaAPI = (function () {
   'use strict';
 
-  const config = window.FORGECORE_CONFIG || {
+  const config = window.DEMO_CONFIG || {
     demoId: 'DEMO-02',
-    industry: 'Manufacturing & Industrial SMEs',
+    industry: 'Manufacturing & Industrial',
     clientName: 'ForgeCore Industries',
-    endpoints: { submitUrl: '', allowSimulationMode: true }
+    appsScriptUrl: window.APPS_SCRIPT_WEB_APP_URL || ''
   };
 
   async function submitLead(formData, options = {}) {
-    if (formData.website_hp || formData.company_hp) {
-      console.warn('[ScaleNova Security] Honeypot triggered. Silently dropping payload.');
+    // 1. Anti-spam honeypot check
+    if (formData.website_hp || formData.company_hp || formData.website_trap || formData.security_trap) {
+      console.warn('[ScaleNova Security] Honeypot trap triggered. Request silently dropped.');
       return mockSuccessResponse(formData, 'SPAM_FILTERED');
     }
 
+    // 2. Validate mandatory fields
     if (!formData.name || !formData.email) {
       throw new Error('Name and email are mandatory fields.');
     }
 
     const payload = {
-      demoId: config.demoId,
-      industry: config.industry,
-      sourceWebsite: config.clientName + ' Website',
-      leadType: formData.leadType || 'QUOTE_REQUEST',
-      page: formData.page || window.location.pathname || 'Home',
-      timestamp: new Date().toISOString(),
+      demo_id: config.demoId || 'DEMO-02',
+      lead_type: (formData.lead_type || formData.leadType || 'LEAD').toUpperCase(),
       name: formData.name.trim(),
       email: formData.email.trim(),
       phone: (formData.phone || '').trim(),
-      company: (formData.company || '').trim() || 'OEM / Tier-1 Partner',
-      service: formData.service || 'Precision CNC Machining',
-      requirement: formData.requirement || 'Production Batch RFQ',
-      budget: formData.budget || 'Production Batch',
-      preferredDate: formData.preferredDate || '',
-      preferredTime: formData.preferredTime || '',
-      message: (formData.message || '').trim()
+      company: (formData.company || '').trim() || 'Direct Client',
+      service: formData.service || formData.department || formData.course || formData.product || 'General Inquiry',
+      requirement: formData.requirement || formData.scope || formData.symptoms || formData.quantity || 'Standard Scope',
+      project_type: formData.project_type || formData.projectType || 'Commercial',
+      budget: formData.budget || 'Confidential',
+      preferred_date: formData.preferred_date || formData.preferredDate || formData.date || '',
+      preferred_time: formData.preferred_time || formData.preferredTime || formData.time || '',
+      message: (formData.message || formData.notes || '').trim(),
+      source: 'ForgeCore Industries Website',
+      source_page: formData.source_page || formData.page || window.location.pathname || 'Home'
     };
 
-    const endpoint = config.endpoints.submitUrl;
-    const isMock = !endpoint || endpoint.includes('DEMO_ENDPOINT_ID');
+    const endpoint = window.APPS_SCRIPT_WEB_APP_URL || 
+                     config.appsScriptUrl || 
+                     (window.SCALENOVA_GATEWAY && window.SCALENOVA_GATEWAY.submitUrl);
 
-    if (isMock) {
-      await new Promise(r => setTimeout(r, 700));
+    const isPlaceholder = !endpoint || 
+                          endpoint.includes('YOUR_SHARED_APPS_SCRIPT_WEB_APP_URL') || 
+                          endpoint.includes('DEMO_ENDPOINT_ID');
+
+    if (isPlaceholder) {
+      // Local simulation mode for offline/pre-deployment testing
+      await new Promise(r => setTimeout(r, 600));
       return mockSuccessResponse(payload);
     }
 
@@ -57,46 +65,37 @@ window.ScaleNovaAPI = (function () {
         body: JSON.stringify(payload)
       });
 
-      if (!resp.ok) throw new Error(`HTTP Error ${resp.status}`);
+      if (!resp.ok) {
+        throw new Error('HTTP ' + resp.status);
+      }
+
       const result = await resp.json();
-      if (result.status === 'error') throw new Error(result.message || 'Submission failed');
+      if (result.success === false) {
+        throw new Error(result.message || 'Unable to process the request.');
+      }
       return result;
     } catch (err) {
-      console.warn('[ScaleNova API] Falling back to local simulation:', err);
-      if (config.endpoints.allowSimulationMode) return mockSuccessResponse(payload);
-      throw err;
+      console.warn('[ScaleNova API] Network error, falling back to local simulation:', err);
+      return mockSuccessResponse(payload);
     }
   }
 
   function mockSuccessResponse(payload, overrideId) {
-    const submissionId = overrideId || ('SN-FOR-' + new Date().toISOString().slice(0, 7).replace('-', '') + '-' + Math.floor(1000 + Math.random() * 9000));
+    const submissionId = overrideId || ('SN-D02-' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '-' + Math.floor(1000 + Math.random() * 9000));
     
-    console.group('%c[ScaleNova Demo 02 Ingestion Gateway: ForgeCore Industries]', 'color:#F59E0B;font-weight:bold;font-size:12px;');
-    console.log('Demo ID: DEMO-02 (Manufacturing & Industrial SMEs)');
+    console.group('%c[ScaleNova Demo Ingestion: ForgeCore Industries]', 'color:#F59E0B;font-weight:bold;font-size:12px;');
+    console.log('Demo ID:', 'DEMO-02 (Manufacturing & Industrial)');
     console.log('Generated Submission ID:', submissionId);
-    console.log('Target Google Sheet Tab: "Demo2_Manufacturing"');
-    console.log('Frappe CRM Lead Resource Contract:', {
-      doctype: 'Lead',
-      lead_name: payload.name,
-      email_id: payload.email,
-      mobile_no: payload.phone,
-      company_name: payload.company,
-      source: 'ScaleNova Demo — Manufacturing & Industrial SMEs',
-      status: 'Lead',
-      notes: `Submission ID: ${submissionId} | Manufacturing Spec: ${payload.requirement}`
-    });
-    console.log('Owner Engineering Alert: Dispatched to works manager');
-    console.log('Client RFQ Receipt: Dispatched to ' + payload.email);
+    console.log('Target Worksheet:', 'Demo 2 - Manufacturing');
+    console.log('Payload dispatched:', payload);
     console.groupEnd();
 
     return {
-      status: 'success',
-      submissionId: submissionId,
-      demoId: config.demoId,
-      leadType: payload.leadType,
-      sheetLogged: true,
-      frappeStatus: 'SYNCED',
-      message: 'RFQ successfully ingested into ScaleNova ERP / CRM pipeline.'
+      success: true,
+      submission_id: submissionId,
+      demo_id: 'DEMO-02',
+      lead_type: payload.lead_type,
+      message: 'Submission received successfully'
     };
   }
 

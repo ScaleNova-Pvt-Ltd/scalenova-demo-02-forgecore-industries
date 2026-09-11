@@ -1,3 +1,10 @@
+window.DEMO_CONFIG = {
+  demoId: 'DEMO-02',
+  industry: 'Manufacturing & Industrial',
+  clientName: 'ForgeCore Industries',
+  appsScriptUrl: window.APPS_SCRIPT_WEB_APP_URL || 'YOUR_SHARED_APPS_SCRIPT_WEB_APP_URL'
+};
+
 /**
  * ScaleNova Client Demo 02 — ForgeCore Industries
  * Frontend Configuration Module (src/config/index.js)
