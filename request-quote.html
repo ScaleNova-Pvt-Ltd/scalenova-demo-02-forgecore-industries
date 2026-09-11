@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Component Quote (RFQ) — ForgeCore Industries</title>
+  <meta name="description" content="Submit technical engineering drawings and batch specifications for immediate quote review.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
+  <link rel="stylesheet" href="src/styles/theme.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
+      <nav><ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+        <li><a href="industries.html" class="nav-link">Industries</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+        <li><a href="insights.html" class="nav-link">Insights</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul></nav>
+      <a href="contact.html" class="btn btn-steel" style="padding: 10px 18px; font-size: 0.82rem;">Works Hotline</a>
+    </div>
+  </header>
+
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
+    <div class="container" style="max-width: 860px;">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <span class="eyebrow">Direct Works Procurement</span>
+        <h1>Request Production Quotation (RFQ)</h1>
+        <p style="color: #9CA3AF; font-size: 1.1rem;">Engineering estimate and DFM technical review generated within 24 business hours.</p>
+      </div>
+
+      <div class="form-card">
+        <form id="rfq-form">
+          <div class="honeypot" aria-hidden="true">
+            <input type="text" name="website_hp" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Procurement / Lead Engineer *</label>
+              <input type="text" name="name" class="form-input" placeholder="e.g. Vikramaditya Mehta" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Corporate Email Address *</label>
+              <input type="email" name="email" class="form-input" placeholder="v.mehta@bharatautoworks.in" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Direct Contact Phone *</label>
+              <input type="tel" name="phone" class="form-input" placeholder="+91 99300 67890" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company / OEM Name *</label>
+              <input type="text" name="company" class="form-input" placeholder="e.g. Bharat Auto Components Ltd" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Primary Metallurgy / Material</label>
+              <select name="service" class="form-select">
+                <option value="Alloy Steel Forging (4140/4340/EN24)">Alloy Steel Forging (4140/4340/EN24)</option>
+                <option value="Titanium Grade 5 (Ti-6Al-4V)">Titanium Grade 5 (Ti-6Al-4V)</option>
+                <option value="Stainless Steel 17-4PH / 316L">Stainless Steel 17-4PH / 316L</option>
+                <option value="Nickel Alloy Inconel 625/718">Nickel Alloy Inconel 625/718</option>
+                <option value="Heavy Structural Fabrication">Heavy Structural Fabrication</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Anticipated Batch Volume</label>
+              <select name="budget" class="form-select">
+                <option value="Prototype / Pilot (1 - 50 Units)">Prototype / Pilot (1 - 50 Units)</option>
+                <option value="Batch Run (50 - 500 Units)" selected>Batch Run (50 - 500 Units)</option>
+                <option value="High Volume Series (500 - 10,000 Units)">High Volume Series (500 - 10,000 Units)</option>
+                <option value="Annual Blanket OEM Contract">Annual Blanket OEM Contract (10,000+ Units)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Component Part Number / Description *</label>
+            <input type="text" name="requirement" class="form-input" placeholder="e.g. Part #FC-9482 Turbine Flange Yoke" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Technical Specifications, Tolerances & CAD Download Link *</label>
+            <textarea name="message" class="form-textarea" placeholder="Detail material grade, critical dimensional tolerances (e.g. ±0.01 mm), heat treatment requirements, testing specifications (NDT/UT), and secure CAD link (Dropbox/Google Drive/SharePoint)..." required></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn btn-amber" style="width: 100%;">Transmit Technical RFQ Package</button>
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 12px; font-family: var(--font-mono);">
+            NDAs honored automatically. Raw CAD files encrypted under military-grade storage protocols.
+          </p>
+        </form>
+
+        <div id="receipt" class="receipt-box">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <span class="eyebrow">RFQ Registered</span>
+          <h2>Production Drawing Queued</h2>
+          <p>Your technical specifications have been routed to the ForgeCore Chief Metallurgist and recorded in the ScaleNova ERP system.</p>
+          <div class="receipt-ref" id="ref-id">SN-FOR-XXXXXXXX</div>
+          <div style="margin-top: 24px;">
+            <a href="index.html" class="btn btn-steel">Return to Plant Overview</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Demonstration.</div>
+  </footer>
+
+  <script src="src/config/index.js"></script>
+  <script src="src/services/api.js"></script>
+  <script>
+    document.getElementById('rfq-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Transmitting RFQ Package...';
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      data.leadType = 'QUOTE_REQUEST';
+      data.page = 'Request Quote (RFQ)';
+
+      try {
+        const result = await ScaleNovaAPI.submitLead(data);
+        document.getElementById('rfq-form').style.display = 'none';
+        document.getElementById('ref-id').textContent = result.submissionId;
+        document.getElementById('receipt').classList.add('active');
+      } catch (err) {
+        alert(err.message || 'Error transmitting RFQ. Please contact works engineering desk.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Transmit Technical RFQ Package';
+      }
+    });
+  </script>
+</body>
+</html>
