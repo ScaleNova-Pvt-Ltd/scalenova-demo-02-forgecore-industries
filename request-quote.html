@@ -26,15 +26,42 @@
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
           <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-          <li><a href="industries.html" class="nav-link">Industries</a></li>
-          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality & ISO</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <a href="contact.html" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.8rem;">Works Liaison</a>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="contact.html" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.8rem;">Works Liaison</a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="toggleForgecoreSidePanel()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Slide-Out Mobile App-Like Drawer -->
+  <div class="side-panel-overlay" id="forgecoreSideOverlay" onclick="toggleForgecoreSidePanel()"></div>
+  <aside class="side-panel-drawer" id="forgecoreSideDrawer" aria-label="Mobile Navigation">
+    <div class="side-panel-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="brand-mark" style="width: 32px; height: 32px; font-size: 0.9rem;">FC</div>
+        <span class="brand-name" style="font-size: 1.1rem;">FORGECORE</span>
+      </div>
+      <button class="side-panel-close" aria-label="Close menu" onclick="toggleForgecoreSidePanel()">&times;</button>
+    </div>
+    <ul class="side-panel-nav">
+      <li><a href="index.html">Home <span>&rarr;</span></a></li>
+      <li><a href="manufacturing.html">Capabilities (Forging & CNC) <span>&rarr;</span></a></li>
+      <li><a href="engineering.html">Metallurgy & Superalloys <span>&rarr;</span></a></li>
+      <li><a href="industries.html">Defense & Aero Sectors <span>&rarr;</span></a></li>
+      <li><a href="quality-certifications.html">Quality & ISO / AS9100D <span>&rarr;</span></a></li>
+      <li><a href="contact.html">Engineering Liaison <span>&rarr;</span></a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 24px;">
+      <a href="request-quote.html" class="btn btn-primary" style="width: 100%; text-align: center; padding: 14px;">Request Quote (RFQ) &rarr;</a>
+    </div>
+  </aside>
 
   <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
     <div class="container" style="max-width: 860px;">
@@ -52,7 +79,7 @@
             <input type="text" name="website_hp" tabindex="-1" autocomplete="off">
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-row-2col">
             <div class="form-group">
               <label class="form-label">Procurement / Lead Engineer *</label>
               <input type="text" name="name" class="form-input" placeholder="e.g. Vikramaditya Mehta" required>
@@ -63,7 +90,7 @@
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-row-2col">
             <div class="form-group">
               <label class="form-label">Direct Contact Phone *</label>
               <input type="tel" name="phone" class="form-input" placeholder="+91 99300 67890" required>
@@ -74,7 +101,7 @@
             </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="form-row-2col">
             <div class="form-group">
               <label class="form-label">Primary Metallurgy / Alloy</label>
               <select name="service" class="form-select">
@@ -162,6 +189,21 @@
         btn.textContent = 'TRANSMIT TECHNICAL RFQ PACKAGE →';
       }
     });
+
+    function toggleForgecoreSidePanel() {
+      const drawer = document.getElementById('forgecoreSideDrawer');
+      const overlay = document.getElementById('forgecoreSideOverlay');
+      const isOpen = drawer.classList.contains('active');
+      if (isOpen) {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('side-panel-open');
+      } else {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+        document.body.classList.add('side-panel-open');
+      }
+    }
   </script>
 </body>
 </html>

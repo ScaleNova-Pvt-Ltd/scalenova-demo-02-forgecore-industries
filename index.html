@@ -53,21 +53,43 @@
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
           <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-          <li><a href="industries.html" class="nav-link">Industries</a></li>
           <li><a href="quality-certifications.html" class="nav-link">Quality & ISO</a></li>
-          <li><a href="projects.html" class="nav-link">Portfolio</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <div style="display: flex; align-items: center; gap: 16px;">
-        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.82rem;">Request Quote (RFQ)</a>
-        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-menu').classList.toggle('open')">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.82rem;">Request RFQ</a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="toggleForgecoreSidePanel()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- Slide-Out Mobile App-Like Drawer -->
+  <div class="side-panel-overlay" id="forgecoreSideOverlay" onclick="toggleForgecoreSidePanel()"></div>
+  <aside class="side-panel-drawer" id="forgecoreSideDrawer" aria-label="Mobile Navigation">
+    <div class="side-panel-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="brand-mark" style="width: 32px; height: 32px; font-size: 0.9rem;">FC</div>
+        <span class="brand-name" style="font-size: 1.1rem;">FORGECORE</span>
+      </div>
+      <button class="side-panel-close" aria-label="Close menu" onclick="toggleForgecoreSidePanel()">&times;</button>
+    </div>
+    <ul class="side-panel-nav">
+      <li><a href="index.html">Home <span>&rarr;</span></a></li>
+      <li><a href="manufacturing.html">Capabilities (Forging & CNC) <span>&rarr;</span></a></li>
+      <li><a href="engineering.html">Metallurgy & Superalloys <span>&rarr;</span></a></li>
+      <li><a href="industries.html">Defense & Aero Sectors <span>&rarr;</span></a></li>
+      <li><a href="quality-certifications.html">Quality & ISO / AS9100D <span>&rarr;</span></a></li>
+      <li><a href="projects.html">Production Portfolio <span>&rarr;</span></a></li>
+      <li><a href="contact.html">Engineering Liaison <span>&rarr;</span></a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 24px;">
+      <a href="request-quote.html" class="btn btn-primary" style="width: 100%; text-align: center; padding: 14px;">Request Quote (RFQ) &rarr;</a>
+    </div>
+  </aside>
 
   <main>
     <!-- Heavy Industrial Hero -->
@@ -76,8 +98,8 @@
         <div>
           <span class="mono-tag">[PLANT STATUS: ONLINE] • ISO 9001:2015 / AS9100D</span>
           <h1 style="margin-top: 18px; margin-bottom: 24px;">ENGINEERED<br><span style="color: var(--accent-amber);">FOR SCALE.</span></h1>
-          <p class="lead" style="max-width: 620px; margin-bottom: 36px;">
-            Tier-1 manufacturing systems engineered for absolute precision, structural durability, and high-volume output. Delivering closed-die forgings up to 12,000 tons and 5-axis CNC machined assemblies to leading global OEMs.
+          <p class="lead" style="max-width: 620px; margin-bottom: 32px;">
+            Tier-1 precision forging and 5-axis CNC machining up to 12,000 tons for mission-critical aerospace, defense, and automotive OEMs.
           </p>
 
           <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
@@ -90,7 +112,24 @@
           </div>
         </div>
 
-        <div class="hero-media-panel">
+        <div class="hero-media-panel hero-visual-card">
+          <!-- 3D Floating Industrial Telemetry Badges -->
+          <div class="floating-industrial-badge" style="top: 16px; right: 16px;">
+            <span style="font-size: 1.2rem; color: var(--accent-amber);">⚙</span>
+            <div>
+              <div style="font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">Tolerance Metric</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #FFFFFF; font-family: var(--font-mono);">±0.005mm 5-Axis</div>
+            </div>
+          </div>
+
+          <div class="floating-industrial-badge" style="bottom: 50px; left: 16px; animation-delay: -3s;">
+            <span style="font-size: 1.2rem; color: #10B981;">⚡</span>
+            <div>
+              <div style="font-size: 0.7rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">Press Force</div>
+              <div style="font-size: 0.88rem; font-weight: 700; color: #FFFFFF; font-family: var(--font-mono);">12,000T Closed-Die</div>
+            </div>
+          </div>
+
           <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80" alt="ForgeCore Closed-Die Heavy Forging Facility" loading="eager">
           <div class="hero-telemetry-overlay">
             <div><strong>FACILITY:</strong> WORKS 01 (PUNE)</div>
@@ -317,5 +356,21 @@
 
   <script src="src/config/index.js"></script>
   <script src="src/services/api.js"></script>
+  <script>
+    function toggleForgecoreSidePanel() {
+      const drawer = document.getElementById('forgecoreSideDrawer');
+      const overlay = document.getElementById('forgecoreSideOverlay');
+      const isOpen = drawer.classList.contains('active');
+      if (isOpen) {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('side-panel-open');
+      } else {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+        document.body.classList.add('side-panel-open');
+      }
+    }
+  </script>
 </body>
 </html>
