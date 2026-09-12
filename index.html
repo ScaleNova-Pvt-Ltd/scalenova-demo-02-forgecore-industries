@@ -3,14 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ForgeCore Industries — Precision Forging, CNC Machining & Heavy Fabrication</title>
-  <meta name="description" content="ForgeCore Industries is an ISO 9001 & AS9100 certified heavy manufacturing SME supplying precision forged components and 5-axis CNC assemblies to aerospace, defense, and automotive OEMs.">
+  <title>ForgeCore Industries — High-Precision Forging & 5-Axis CNC Machining</title>
+  <meta name="description" content="Tier-1 manufacturing and engineering partner providing heavy closed-die forging, 5-axis CNC machining, and mission-critical assemblies for automotive, defense, and energy sectors.">
+  <meta name="keywords" content="heavy forging, CNC machining, industrial manufacturing, Pune MIDC, AS9100D, titanium machining, automotive components">
   
-  <meta property="og:title" content="ForgeCore Industries — Precision Forging & Heavy CNC Machining">
-  <meta property="og:description" content="Mission-critical industrial manufacturing, closed-die forging, and defense engineering. ScaleNova EliteOS Showcase.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="ForgeCore Industries — Engineered for Scale">
+  <meta property="og:description" content="High-precision forging, 5-axis machining, and mission-critical assemblies. ScaleNova EliteOS Client Platform.">
   <meta property="og:type" content="website">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Manufacturer",
+    "name": "ForgeCore Industries",
+    "description": "Precision heavy forging, CNC machining, and industrial component manufacturing.",
+    "telephone": "+91 20 2712 8800",
+    "email": "rfq@forgecore.example.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot 44, MIDC Bhosari Industrial Area",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411026",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0C0E'/><polygon points='6,6 26,6 21,26 11,26' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
@@ -18,28 +40,28 @@
   <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo">
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
         <div class="brand-mark">FC</div>
-        <span class="brand-name">FORGECORE</span>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Industries • Pune MIDC</span>
+        </div>
       </a>
 
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link active">Home</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-          <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
           <li><a href="engineering.html" class="nav-link">Engineering</a></li>
           <li><a href="industries.html" class="nav-link">Industries</a></li>
-          <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality & ISO</a></li>
+          <li><a href="projects.html" class="nav-link">Portfolio</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.82rem;">Request Quote (RFQ)</a>
         <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-menu').classList.toggle('open')">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
@@ -48,192 +70,246 @@
   </header>
 
   <main>
-    <!-- Hero Section with 3D Blueprint Canvas -->
-    <section class="section" style="padding-top: calc(var(--header-height) + 48px); min-height: 88vh; display: flex; align-items: center; overflow: hidden; position: relative;">
-      <div style="position: absolute; inset: 0; z-index: 0; pointer-events: none;">
-        <canvas id="blueprint-canvas" style="width: 100%; height: 100%;"></canvas>
-      </div>
+    <!-- Heavy Industrial Hero -->
+    <section class="hero-industrial">
+      <div class="container hero-grid">
+        <div>
+          <span class="mono-tag">[PLANT STATUS: ONLINE] • ISO 9001:2015 / AS9100D</span>
+          <h1 style="margin-top: 18px; margin-bottom: 24px;">ENGINEERED<br><span style="color: var(--accent-amber);">FOR SCALE.</span></h1>
+          <p class="lead" style="max-width: 620px; margin-bottom: 36px;">
+            Tier-1 manufacturing systems engineered for absolute precision, structural durability, and high-volume output. Delivering closed-die forgings up to 12,000 tons and 5-axis CNC machined assemblies to leading global OEMs.
+          </p>
 
-      <div class="container" style="position: relative; z-index: 1; max-width: 900px;">
-        <span class="eyebrow">AS9100D & ISO 9001:2015 Certified Manufacturing</span>
-        <h1 style="margin-bottom: 20px;">Forged for Zero Failure Tolerance</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; max-width: 680px; margin-bottom: 32px; line-height: 1.7;">
-          ForgeCore manufactures high-integrity forged components, precision 5-axis CNC assemblies, and heavy structural weldments for global defense, aerospace, and energy OEMs.
-        </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
+            <a href="request-quote.html" class="btn btn-primary">Request Manufacturing Quote &rarr;</a>
+            <a href="manufacturing.html" class="btn btn-secondary">Explore Plant Capabilities</a>
+          </div>
 
-        <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px;">
-          <a href="request-quote.html" class="btn btn-amber">Request Component Quote (RFQ)</a>
-          <a href="capabilities.html" class="btn btn-steel">Explore Plant Capabilities</a>
+          <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">
+            [TOLERANCES: ISO 2768-m / ±0.005mm] • [ALLOYS: EN24, Ti-6Al-4V, INCONEL 625]
+          </div>
         </div>
 
-        <!-- Metric Callout Ticker -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--border-subtle); padding-top: 24px;">
-          <div>
-            <div style="font-family: var(--font-industrial); font-size: 1.8rem; color: var(--accent-amber); font-weight: 700;">12,000 MT</div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Annual Forging Capacity</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-industrial); font-size: 1.8rem; color: var(--text-primary); font-weight: 700;">± 0.005 mm</div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">CNC Machining Tolerance</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-industrial); font-size: 1.8rem; color: var(--text-primary); font-weight: 700;">45 CNCs</div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Mazak & DMG Mori Fleet</div>
-          </div>
-          <div>
-            <div style="font-family: var(--font-industrial); font-size: 1.8rem; color: var(--accent-amber); font-weight: 700;">PPM &lt; 15</div>
-            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Defect PPM Standard</div>
+        <div class="hero-media-panel">
+          <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80" alt="ForgeCore Closed-Die Heavy Forging Facility" loading="eager">
+          <div class="hero-telemetry-overlay">
+            <div><strong>FACILITY:</strong> WORKS 01 (PUNE)</div>
+            <div><strong>PRESS:</strong> 12,000T HYDRAULIC</div>
+            <div><strong>DEFECT RATE:</strong> &lt; 0.012%</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Manufacturing Capabilities -->
+    <!-- Technical Specification Stripe -->
+    <section class="spec-strip">
+      <div class="spec-item">
+        <div class="spec-val">12,000<span>T</span></div>
+        <div class="spec-label">Max Press Capacity</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">±0.005<span>mm</span></div>
+        <div class="spec-label">CMM Verification Accuracy</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">99.82<span>%</span></div>
+        <div class="spec-label">First-Pass Inspection Yield</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">65,000<span>m²</span></div>
+        <div class="spec-label">Combined Manufacturing Area</div>
+      </div>
+    </section>
+
+    <!-- Capabilities Matrix -->
     <section class="section" style="background: var(--bg-secondary);">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Manufacturing Core</span>
-          <h2>Integrated Precision Capabilities</h2>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <span class="mono-tag">MANUFACTURING SCOPE</span>
+            <h2 style="margin-top: 14px;">Heavy Engineering & Precision Production</h2>
+          </div>
+          <a href="manufacturing.html" class="btn btn-secondary">Full Capabilities Spec &rarr;</a>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <span class="spec-badge">CAPABILITY 01</span>
-            <h3>Closed & Open Die Forging</h3>
-            <p>Hydraulic & counterblow forging hammers producing components from 0.5 kg to 8,500 kg in high-tensile alloy steels and aerospace titanium.</p>
-            <a href="capabilities.html" style="color: var(--accent-amber); font-size: 0.85rem; font-family: var(--font-industrial); font-weight: 600;">Full Forging Specs &rarr;</a>
+        <div class="cap-matrix">
+          <div class="cap-card">
+            <span class="cap-num">01 // FORGING</span>
+            <h3>Closed & Open-Die Heavy Forging</h3>
+            <p>
+              High-integrity structural forgings up to 12 metric tons. Controlled grain flow alignment for crankshafts, connecting rods, and transmission bevel gears.
+            </p>
           </div>
 
-          <div class="card">
-            <span class="spec-badge">CAPABILITY 02</span>
-            <h3>5-Axis High-Speed CNC Machining</h3>
-            <p>Climate-controlled machining floor with Mazak, DMG Mori, and Makino multi-axis centers delivering tolerances down to ±0.005 mm.</p>
-            <a href="capabilities.html" style="color: var(--accent-amber); font-size: 0.85rem; font-family: var(--font-industrial); font-weight: 600;">Machining Centers &rarr;</a>
+          <div class="cap-card">
+            <span class="cap-num">02 // MACHINING</span>
+            <h3>5-Axis High-Velocity CNC Milling</h3>
+            <p>
+              Continuous 5-axis DMG MORI machining centers. High-tolerance contoured aero-structures, turbine impellers, and complex fluid manifold housings.
+            </p>
           </div>
 
-          <div class="card">
-            <span class="spec-badge">CAPABILITY 03</span>
-            <h3>Metallurgical Testing & NDT Lab</h3>
-            <p>In-house NADCAP accredited testing suite featuring optical emission spectroscopy, ultrasonic immersion testing, and coordinate measuring machines (CMM).</p>
-            <a href="quality-certifications.html" style="color: var(--accent-amber); font-size: 0.85rem; font-family: var(--font-industrial); font-weight: 600;">Quality Certs &rarr;</a>
+          <div class="cap-card">
+            <span class="cap-num">03 // METALLURGY</span>
+            <h3>Superalloy & Titanium Machining</h3>
+            <p>
+              Specialized cryogenic tooling for Grade 5 Titanium (Ti-6Al-4V) and Inconel 625/718 alloys engineered for aerospace propulsion and downhole energy tools.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <span class="cap-num">04 // HEAT TREATMENT</span>
+            <h3>Automated Atmosphere Quench & Temper</h3>
+            <p>
+              In-house computer-controlled continuous carburizing, induction surface hardening, and gas nitriding to achieve exact Rockwell C specifications.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <span class="cap-num">05 // QUALITY ASSURANCE</span>
+            <h3>Zeiss Coordinate Metrology & NDT</h3>
+            <p>
+              Laser scanning CMM verification, magnetic particle inspection (MPI), and ultrasonic flaw detection with 100% material traceability certs (EN 10204 3.1).
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <span class="cap-num">06 // ASSEMBLY</span>
+            <h3>Robotic Sub-System Integration</h3>
+            <p>
+              Automated robotic welding, precision bearing press-fits, pressure-tested hydro-assemblies, and export-compliant anti-corrosion VCI packaging.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Component Gallery Preview -->
+    <!-- Material Specifications Table -->
     <section class="section">
       <div class="container">
-        <div class="section-header">
-          <span class="eyebrow">Component Portfolio</span>
-          <h2>Critical Engineered Assemblies</h2>
-        </div>
+        <span class="mono-tag">METALLURGY ARCHITECTURE</span>
+        <h2 style="margin-top: 14px; margin-bottom: 24px;">Certified Engineering Alloys Matrix</h2>
+        <p class="lead" style="max-width: 720px; margin-bottom: 32px;">
+          All raw billets sourced from audited aerospace and automotive primary steelmakers with full chemical composition and ultrasonic test mill certificates.
+        </p>
 
-        <div class="grid-3">
-          <div class="card" style="padding: 0; overflow: hidden;">
-            <div style="aspect-ratio: 16/10; background: #1C2028;">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Forged steel turbine shaft" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div style="padding: 24px;">
-              <span class="eyebrow">Energy & Gas Turbines</span>
-              <h4>Forged High-Pressure Rotor Shafts</h4>
-              <p style="font-size: 0.85rem;">Forged from vacuum-degassed Inconel 718 with full 100% volumetric ultrasonic inspection.</p>
-              <a href="projects.html" style="color: var(--accent-amber); font-size: 0.82rem; font-family: var(--font-industrial);">View Component Data &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card" style="padding: 0; overflow: hidden;">
-            <div style="aspect-ratio: 16/10; background: #1C2028;">
-              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80" alt="CNC precision aircraft landing gear yoke" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div style="padding: 24px;">
-              <span class="eyebrow">Aerospace & Defense</span>
-              <h4>Titanium Landing Gear Yokes</h4>
-              <p style="font-size: 0.85rem;">Ti-6Al-4V precision forged and machined with 5-axis simultaneous contouring.</p>
-              <a href="projects.html" style="color: var(--accent-amber); font-size: 0.82rem; font-family: var(--font-industrial);">View Component Data &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card" style="padding: 0; overflow: hidden;">
-            <div style="aspect-ratio: 16/10; background: #1C2028;">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Heavy hydraulic flange assembly" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div style="padding: 24px;">
-              <span class="eyebrow">Heavy Automotive & Mining</span>
-              <h4>Heavy Transmission Spindles</h4>
-              <p style="font-size: 0.85rem;">Case-hardened 8620 alloy steel spindles for off-highway earthmoving equipment.</p>
-              <a href="projects.html" style="color: var(--accent-amber); font-size: 0.82rem; font-family: var(--font-industrial);">View Component Data &rarr;</a>
-            </div>
-          </div>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Alloy Grade</th>
+                <th>Standard Specification</th>
+                <th>Tensile Strength (Rm)</th>
+                <th>Hardness Range</th>
+                <th>Key Applications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: #FFFFFF; font-weight: 700;">EN24 / AISI 4340</td>
+                <td>BS 970 / ASTM A29</td>
+                <td>850 – 1,000 MPa</td>
+                <td>248 – 302 HB</td>
+                <td>Automotive crankshafts, heavy-duty propeller shafts, high-stress axles</td>
+              </tr>
+              <tr>
+                <td style="color: #FFFFFF; font-weight: 700;">Ti-6Al-4V (Grade 5)</td>
+                <td>ASTM B348 / AMS 4928</td>
+                <td>950 – 1,050 MPa</td>
+                <td>30 – 36 HRC</td>
+                <td>Aerospace structural brackets, jet turbine vanes, surgical components</td>
+              </tr>
+              <tr>
+                <td style="color: #FFFFFF; font-weight: 700;">Inconel 625 / 718</td>
+                <td>AMS 5666 / ASTM B446</td>
+                <td>1,200 – 1,400 MPa</td>
+                <td>36 – 44 HRC</td>
+                <td>Subsea oil & gas manifolds, rocket propulsion nozzles, gas turbines</td>
+              </tr>
+              <tr>
+                <td style="color: #FFFFFF; font-weight: 700;">17-4PH Stainless</td>
+                <td>ASTM A564 / AMS 5643</td>
+                <td>930 – 1,310 MPa</td>
+                <td>28 – 44 HRC</td>
+                <td>Marine propeller fittings, valve stems, chemical processing pump shafts</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- RFQ Banner -->
-    <section class="section" style="background: var(--bg-secondary);">
-      <div class="container" style="max-width: 860px; text-align: center;">
-        <span class="eyebrow">Direct OEM Supply Chain</span>
-        <h2>Ready for Batch Production or Prototyping?</h2>
-        <p style="color: #9CA3AF; margin: 16px auto 32px; font-size: 1.1rem;">
-          Send CAD STEP files or technical drawings to our engineering desk. Comprehensive DFM review and formal RFQ quotation within 24 business hours.
+    <!-- RFQ Call to Action -->
+    <section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border-medium); border-bottom: 1px solid var(--border-medium);">
+      <div class="container" style="text-align: center; max-width: 820px;">
+        <span class="mono-tag">[CONTRACT PRODUCTION]</span>
+        <h2 style="margin-top: 16px; margin-bottom: 20px;">Accelerate Your Engineering Production</h2>
+        <p class="lead" style="margin-bottom: 36px;">
+          Submit your 2D engineering drawings or 3D CAD models (STEP/IGES) for a formal feasibility study, metallurgical review, and unit cost quotation within 48 hours.
         </p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="request-quote.html" class="btn btn-amber">Submit RFQ & CAD Specs</a>
-          <a href="contact.html" class="btn btn-steel">Contact Engineering Department</a>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="request-quote.html" class="btn btn-primary" style="padding: 16px 36px;">Submit RFQ Specification &rarr;</a>
+          <a href="contact.html" class="btn btn-secondary" style="padding: 16px 32px;">Engineering Liaison Desk</a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Industrial Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-top">
+      <div class="footer-grid">
         <div>
           <div class="brand-logo" style="margin-bottom: 16px;">
             <div class="brand-mark">FC</div>
             <span class="brand-name">FORGECORE INDUSTRIES</span>
           </div>
-          <p style="max-width: 320px; font-size: 0.85rem;">
-            Heavy industrial manufacturing SME specializing in closed-die forging, multi-axis CNC machining, and defense components.
+          <p style="max-width: 320px; font-size: 0.88rem; line-height: 1.6; color: var(--text-secondary);">
+            Certified heavy industrial manufacturer specializing in closed-die forgings, continuous 5-axis CNC machining, and mission-critical assemblies for global Tier-1 OEMs.
           </p>
         </div>
 
         <div class="footer-col">
           <h4>Capabilities</h4>
           <ul class="footer-links">
-            <li><a href="capabilities.html">Heavy Forging</a></li>
-            <li><a href="manufacturing.html">CNC Machining Floor</a></li>
-            <li><a href="engineering.html">Metallurgy Lab & NDT</a></li>
-            <li><a href="quality-certifications.html">ISO 9001 & AS9100</a></li>
+            <li><a href="manufacturing.html">Heavy Forging (12,000T)</a></li>
+            <li><a href="manufacturing.html">5-Axis CNC Milling</a></li>
+            <li><a href="engineering.html">Aerospace Titanium</a></li>
+            <li><a href="quality-certifications.html">CMM Quality Metrology</a></li>
+            <li><a href="projects.html">Production Portfolio</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Plant Locations</h4>
+          <h4>Facilities</h4>
           <ul class="footer-links">
-            <li><strong>Works 1:</strong> MIDC Bhosari, Pune</li>
-            <li><strong>Works 2:</strong> Peelamedu, Coimbatore</li>
-            <li><strong>Works 3:</strong> SIPCOT SEZ, Chennai</li>
+            <li><strong>Works 01 (HQ):</strong> MIDC Bhosari, Pune</li>
+            <li><strong>Works 02 (CNC):</strong> Coimbatore Precision Hub</li>
+            <li><strong>Works 03 (Export):</strong> Oragadam Industrial Corridor, Chennai</li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Direct Desk</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+912027128800">+91 (020) 2712 8800</a></li>
-            <li><a href="mailto:rfq@forgecore.example.com">rfq@forgecore.example.com</a></li>
-            <li><a href="request-quote.html">Submit Drawing / RFQ</a></li>
-            <li><a href="privacy.html">Export Control & Quality</a></li>
-          </ul>
+          <h4>RFQ Desk</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Direct RFQ engineering hotline:
+          </p>
+          <p style="font-family: var(--font-mono); color: #FFFFFF; font-size: 0.95rem; margin-bottom: 8px;">
+            +91 (020) 2712 8800
+          </p>
+          <p style="font-family: var(--font-mono); color: var(--accent-amber); font-size: 0.9rem; margin-bottom: 20px;">
+            rfq@forgecore.example.com
+          </p>
+          <a href="request-quote.html" class="btn btn-primary" style="font-size: 0.78rem; padding: 10px 18px;">Request Quote</a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 ForgeCore Industries Pvt. Ltd. Registered Industrial SME.</div>
-        <div class="scalenova-badge">
-          <span>ScaleNova EliteOS Demo (Manufacturing SME)</span>
-          <span style="opacity: 0.3;">•</span>
-          <a href="https://scalenovasys.com/" target="_blank" rel="noopener">ScaleNova Systems</a>
+        <div>&copy; 2026 ForgeCore Industries Private Limited. All rights reserved. ISO 9001:2015 / AS9100D Certified.</div>
+        <div style="display: flex; gap: 16px;">
+          <a href="privacy.html" style="color: var(--text-muted); text-decoration: none;">Industrial Compliance</a>
+          <span>•</span>
+          <span style="color: var(--text-muted);">ScaleNova EliteOS Client Platform</span>
         </div>
       </div>
     </div>
@@ -241,6 +317,5 @@
 
   <script src="src/config/index.js"></script>
   <script src="src/services/api.js"></script>
-  <script src="src/components/blueprint-canvas.js"></script>
 </body>
 </html>

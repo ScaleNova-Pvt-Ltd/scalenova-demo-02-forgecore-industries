@@ -3,64 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Our Plant & Sales Office — ForgeCore Industries</title>
+  <title>Contact Engineering Liaison & Plants — ForgeCore Industries</title>
   <meta name="description" content="Connect with ForgeCore technical sales engineers, plant directors, and supply chain managers.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0C0E'/><polygon points='6,6 26,6 21,26 11,26' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link active">Contact</a></li>
-      </ul></nav>
-      <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Industries • Pune MIDC</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
+          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.8rem;">Request RFQ</a>
     </div>
   </header>
 
   <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
     <div class="container">
-      <div style="max-width: 820px; margin-bottom: 64px;">
-        <span class="eyebrow">Plant Locations & Technical Support</span>
-        <h1>Connect With Our Plant Engineering Team</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
-          Schedule an in-person plant audit, request immediate technical consultation, or speak with an applications engineer.
+      <div style="max-width: 820px; margin-bottom: 48px;">
+        <span class="mono-tag">[PLANT ACCESS & LIAISON]</span>
+        <h1 style="margin-top: 14px; margin-bottom: 16px;">CONNECT WITH OUR WORKS DIRECTORS</h1>
+        <p class="lead">
+          Schedule an in-person plant audit, request technical consultation, or speak directly with an applications engineer.
         </p>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 64px;">
-        <div class="card">
-          <span class="spec-badge">MANUFACTURING CAMPUS</span>
-          <h3>Headquarters & Main Forging Facility</h3>
-          <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px;">
-            Plot 42-48, Heavy Industrial Corridor Phase II<br>
-            Sri City / Oragadam Industrial Zone, India<br>
-            <strong>Direct Plant Line:</strong> +91 (44) 4890-4200<br>
-            <strong>RFQ Inquiries:</strong> rfq@forgecore-industries.demo<br>
-            <strong>Quality Assurance:</strong> quality@forgecore-industries.demo
-          </p>
-          <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.85rem; color: var(--accent-amber);">
-            Operating 24/7 in 3 continuous industrial shifts. Plant audit visits welcomed with 48-hour prior notice for security and PPE clearance.
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start;">
+        <!-- Contact Form -->
+        <div class="form-industrial-card">
+          <form id="contact-form">
+            <div style="display:none;" aria-hidden="true">
+              <input type="text" name="website_hp" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" name="name" class="form-input" placeholder="e.g. Suresh Patel" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Corporate Email *</label>
+                <input type="email" name="email" class="form-input" placeholder="suresh@patel-machinery.in" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div class="form-group">
+                <label class="form-label">Contact Phone *</label>
+                <input type="tel" name="phone" class="form-input" placeholder="+91 97123 45678" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company / OEM *</label>
+                <input type="text" name="company" class="form-input" placeholder="e.g. Patel Machinery Works" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Technical Area / Service</label>
+              <select name="service" class="form-select">
+                <option value="5-Axis CNC Milling">5-Axis CNC Milling</option>
+                <option value="Heavy Closed-Die Forging">Heavy Closed-Die Forging</option>
+                <option value="Superalloy & Titanium Machining">Superalloy & Titanium Machining</option>
+                <option value="Heat Treatment & Metallurgical Lab">Heat Treatment & Metallurgical Lab</option>
+                <option value="General Plant Inquiry">General Plant Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Technical Requirement / Message *</label>
+              <textarea name="message" class="form-textarea" rows="4" placeholder="Describe component specifications, tooling requirements, or plant audit dates..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; padding: 16px;">TRANSMIT PLANT INQUIRY &rarr;</button>
+          </form>
+
+          <div id="receipt" style="display: none; text-align: center; padding: 40px 20px;">
+            <div style="width: 60px; height: 60px; border: 2px solid var(--accent-amber); background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <span class="mono-tag">[DISPATCH_CONFIRMED]</span>
+            <h2 style="margin-top: 16px; margin-bottom: 12px;">PLANT INQUIRY LOGGED</h2>
+            <p style="color: var(--text-secondary); max-width: 480px; margin: 0 auto 24px;">
+              Your inquiry has been dispatched to the Works Liaison Manager. A technical representative will respond within 4 business hours.
+            </p>
+            <div style="background: var(--bg-primary); border: 1px solid var(--border-amber); padding: 16px; font-family: var(--font-mono); font-size: 1.15rem; color: var(--accent-amber); font-weight: 700; margin-bottom: 24px;" id="ref-id">
+              SN-D02-XXXXXXXX
+            </div>
+            <a href="index.html" class="btn btn-secondary">Return to Plant Overview</a>
           </div>
         </div>
 
-        <div class="card">
-          <span class="spec-badge">RAPID INQUIRY</span>
-          <h3>Direct Message</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 24px;">
-            For formal RFQs with technical drawings, please use our dedicated engineering portal:
-          </p>
-          <a href="request-quote.html" class="btn btn-amber" style="width: 100%; text-align: center; justify-content: center;">Go to Detailed RFQ Portal &rarr;</a>
+        <!-- Plant Facilities Info -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 40px;">
+          <span class="mono-tag">[PRODUCTION FACILITIES]</span>
+          <h3 style="margin-top: 16px; margin-bottom: 24px; color: #FFFFFF;">WORKS LOCATIONS</h3>
+
+          <div style="margin-bottom: 28px;">
+            <h4 style="color: var(--accent-amber); margin-bottom: 6px;">WORKS 01 — PUNE (HQ)</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Plot 44, MIDC Bhosari Industrial Area, Pune 411026<br>
+              Heavy Forging, 12,000T Press Lines & Metallurgical Testing Lab<br>
+              Tel: +91 (020) 2712 8800
+            </p>
+          </div>
+
+          <div style="margin-bottom: 28px;">
+            <h4 style="color: var(--accent-amber); margin-bottom: 6px;">WORKS 02 — COIMBATORE</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              Precision CNC Machining & High-Speed Milling Division<br>
+              Peelamedu Industrial Estate, Coimbatore 641004
+            </p>
+          </div>
+
+          <div style="padding-top: 20px; border-top: 1px solid var(--border-subtle);">
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Direct RFQ Desk</div>
+            <a href="mailto:rfq@forgecore.example.com" style="color: #FFFFFF; font-family: var(--font-mono); text-decoration: none; font-size: 0.95rem;">rfq@forgecore.example.com</a>
+          </div>
         </div>
       </div>
     </div>
@@ -68,9 +144,37 @@
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <div>&copy; 2026 ForgeCore Industries Ltd. All rights reserved.</div>
-      <div><a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">Privacy & Data Policy</a></div>
+      <div>&copy; 2026 ForgeCore Industries Private Limited. All rights reserved.</div>
+      <div><a href="privacy.html" style="color: var(--text-secondary); text-decoration: none;">Industrial Privacy Policy</a></div>
     </div>
   </footer>
+
+  <script src="src/config/index.js"></script>
+  <script src="src/services/api.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'TRANSMITTING INQUIRY...';
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      data.leadType = 'CONTACT';
+      data.page = '/contact.html';
+
+      try {
+        const result = await ScaleNovaAPI.submitLead(data);
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('ref-id').textContent = result.submissionId || result.submission_id || 'SN-D02-CONFIRMED';
+        document.getElementById('receipt').style.display = 'block';
+      } catch (err) {
+        alert(err.message || 'Error transmitting inquiry. Please try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'TRANSMIT PLANT INQUIRY →';
+      }
+    });
+  </script>
 </body>
 </html>
