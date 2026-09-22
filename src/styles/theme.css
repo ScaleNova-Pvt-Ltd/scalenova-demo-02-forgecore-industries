@@ -686,3 +686,448 @@ body.side-panel-open {
   0% { transform: translateY(0px) rotate(0deg); }
   100% { transform: translateY(-8px) rotate(0.5deg); }
 }
+
+/* FORGECORE ENTERPRISE ENHANCEMENTS */
+.top-plant-bar {
+  background: #0B0E14;
+  color: #94A3B8;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  padding: 8px 0;
+  border-bottom: 1px solid #1E293B;
+}
+.top-plant-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.plant-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 10px #10B981;
+  display: inline-block;
+  animation: plantPulse 2s infinite;
+}
+@keyframes plantPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* Industrial Contract Tiers Grid */
+.contract-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+@media (max-width: 992px) {
+  .contract-grid { grid-template-columns: 1fr; }
+}
+.contract-card {
+  background: #151A22;
+  border: 1px solid #242D3D;
+  border-radius: 6px;
+  padding: 36px 28px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.contract-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-amber);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+}
+.contract-card.featured {
+  background: #1A212D;
+  border: 1px solid var(--accent-amber);
+  box-shadow: 0 16px 40px rgba(245, 158, 11, 0.12);
+}
+.contract-badge {
+  position: absolute;
+  top: -12px;
+  left: 28px;
+  background: var(--accent-amber);
+  color: #0F141C;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 12px;
+  border-radius: 3px;
+}
+.contract-lead-time {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  margin: 14px 0 6px;
+  font-weight: 700;
+}
+.contract-spec-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-amber);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.contract-features {
+  list-style: none;
+  margin: 24px 0;
+  flex-grow: 1;
+}
+.contract-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #CBD5E1;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.contract-feature-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  stroke: var(--accent-amber);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 14, 20, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+.modal-dialog {
+  background: #151A22;
+  border: 1px solid #2D3748;
+  color: #FFFFFF;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+  padding: 36px;
+}
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #1E293B;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CBD5E1;
+  transition: all 0.2s;
+}
+.modal-close:hover {
+  background: var(--accent-amber);
+  color: #0F141C;
+}
+.video-responsive-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #000;
+  margin: 20px 0;
+}
+.video-responsive-wrapper video,
+.video-responsive-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   INDUSTRIAL VISUAL INFOGRAPHICS & AMBIENT ENGINE
+   ========================================================================== */
+
+/* Ambient Blueprint Canvas */
+.ambient-3d-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+/* KPI Stat Ribbon (Heavy Metallurgy & Precision Metrics) */
+.kpi-ribbon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  background: rgba(18, 21, 26, 0.85);
+  border: 1px solid var(--border-amber);
+  border-radius: 8px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+.kpi-ribbon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  border-right: 1px solid var(--border-subtle);
+}
+
+.kpi-ribbon-item:last-child {
+  border-right: none;
+}
+
+.kpi-ribbon-value {
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-amber);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  text-shadow: 0 0 20px var(--accent-amber-glow);
+}
+
+.kpi-ribbon-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* 3D Card Tilt with Industrial Glow */
+.card-3d-tilt {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.card-3d-tilt:hover {
+  border-color: var(--border-amber);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 24px var(--accent-amber-glow);
+}
+
+/* Process Roadmap & Alloy Tab Switcher */
+.process-roadmap-wrapper,
+.alloy-spec-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.roadmap-nav-pills,
+.alloy-nav-pills {
+  display: flex;
+  background: rgba(10, 12, 14, 0.95);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.roadmap-nav-pills::-webkit-scrollbar,
+.alloy-nav-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.roadmap-step-btn,
+.alloy-tab-btn {
+  flex: 1;
+  min-width: 170px;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-grotesk);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.roadmap-step-btn .step-num,
+.alloy-tab-btn .alloy-code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-amber);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.roadmap-step-btn:hover,
+.alloy-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+.roadmap-step-btn.active,
+.alloy-tab-btn.active {
+  background: rgba(245, 158, 11, 0.08);
+  border-bottom-color: var(--accent-amber);
+  color: var(--text-primary);
+}
+
+.roadmap-content-display,
+.alloy-content-display {
+  padding: 36px;
+  background: var(--bg-surface);
+}
+
+.roadmap-step-panel,
+.alloy-spec-panel {
+  display: none;
+}
+
+.roadmap-step-panel.active,
+.alloy-spec-panel.active {
+  display: block;
+  animation: panelFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal Engine Overhaul */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 12, 14, 0.88);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-amber);
+  border-radius: 8px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), 0 0 32px var(--accent-amber-glow);
+  transform: scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1);
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-surface);
+}
+
+.modal-title {
+  font-family: var(--font-grotesk);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.modal-body {
+  padding: 28px 24px;
+  overflow-y: auto;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background: var(--bg-surface);
+}
+
+/* Metallurgy & Tolerance Spec Badges */
+.badge-spec {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
+  padding: 4px 10px;
+}
+
+.badge-certified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent-steel);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 4px;
+  padding: 4px 10px;
+}
+

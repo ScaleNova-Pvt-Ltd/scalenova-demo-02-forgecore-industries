@@ -3,80 +3,349 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering & Tooling — ForgeCore Industries</title>
-  <meta name="description" content="Finite element analysis, mold flow simulation, metallurgical engineering, and custom die manufacturing at ForgeCore.">
+  <title>Engineering, Tooling & FEA Simulation — ForgeCore Industries</title>
+  <meta name="description" content="Design for Manufacturability (DFM), DEFORM-3D grain flow simulation, in-house H13 die manufacturing, and Zeiss CMM metrology at ForgeCore.">
+  <meta name="keywords" content="forging engineering, DEFORM 3D simulation, CAD DFM, in-house die tooling, Zeiss CMM inspection, AS9102 First Article">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Engineering, Tooling & FEA Simulation — ForgeCore Industries">
+  <meta property="og:description" content="Predictive finite element modeling, unbroken grain-flow engineering, and rapid in-house die tooling.">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Industrial Forging Tooling & FEA Engineering",
+    "provider": {
+      "@type": "Organization",
+      "name": "ForgeCore Industries"
+    },
+    "description": "Thermomechanical finite element analysis, in-house die sinking, and AS9102 metrology verification."
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Industrial Top Bar -->
+  <div class="top-dispatch-bar" style="background: #0A0C0E; border-bottom: 1px solid var(--border-amber); padding: 8px 0; font-size: 0.8rem;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-amber); border-radius: 50%; box-shadow: 0 0 8px var(--accent-amber);"></span>
+        <span style="font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;">SIMULATION LAB</span> &bull; DEFORM-3D v13.2 Online &bull; Zeiss Prismo CMM Active
+      </div>
+      <div>
+        <a href="contracts.html" style="color: #FFF; text-decoration: none; margin-right: 16px; font-weight: 600;">Supply Contracts &rarr;</a>
+        Engineering Hotline: <a href="tel:+912069803200" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">+91 20 6980 3200</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link active">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul></nav>
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Heavy Engineering &bull; Metallurgy</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+          <li><a href="engineering.html" class="nav-link active">Engineering</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+          <li><a href="contracts.html" class="nav-link">Contracts</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
       <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
     </div>
   </header>
 
-  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px; position: relative; z-index: 1;">
     <div class="container">
-      <div style="max-width: 840px; margin-bottom: 64px;">
-        <span class="eyebrow">Advanced Design & Simulation</span>
-        <h1>Design for Manufacturability (DFM)</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
-          Engineering excellence isn't measured at the finish line — it begins with predictive FEA simulation, grain-flow alignment, and toolpath optimization to eliminate structural weakness before metal touches die.
+      
+      <!-- Hero Headline with Badge -->
+      <div style="max-width: 860px; margin-bottom: 48px;">
+        <span class="badge-spec" style="margin-bottom: 12px;">PREDICTIVE FINITE ELEMENT MODELING</span>
+        <h1 style="font-family: var(--font-grotesk); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; color: var(--text-primary);">
+          Design for Manufacturability (DFM) & Tooling Engineering.
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; max-width: 740px;">
+          Eliminating structural failure before metal touches die. We utilize thermomechanical FEA simulations, continuous grain-flow mapping, and in-house high-speed die sinking.
         </p>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 64px;">
-        <div class="card">
-          <span class="spec-badge">FEA & GRAIN SIMULATION</span>
-          <h3>DEFORM-3D Grain Flow Modeling</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 16px;">
-            We subject complex geometry to full thermomechanical deformation simulations. This guarantees uninterrupted grain flow across high-stress radii, preventing lap formation and micro-porosity.
-          </p>
-          <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 4px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-amber);">
-            STATUS: 100% Virtual Tool Tryout Before Die Sinking
-          </div>
+      <!-- Live Engineering KPI Ribbon -->
+      <div class="kpi-ribbon-container" style="margin-bottom: 64px;">
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="18" data-kpi-suffix=" Days">0 Days</div>
+          <div class="kpi-ribbon-label">Prototype Die Turnaround Time</div>
         </div>
-
-        <div class="card">
-          <span class="spec-badge">IN-HOUSE TOOL ROOM</span>
-          <h3>Custom Die Manufacturing</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 16px;">
-            ForgeCore engineers produce all forging dies and trim tooling in-house using high-speed hard-milling machines and Wire EDM. This reduces prototype turnaround from 12 weeks to under 18 business days.
-          </p>
-          <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 4px; border: 1px solid var(--border-color); font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-amber);">
-            DIE STEEL: Premium AISI H13 & DIN 1.2714 Die Blocks
-          </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="100" data-kpi-suffix="%">0%</div>
+          <div class="kpi-ribbon-label">Virtual FEA Tryout Validation</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="0.003" data-kpi-prefix="±" data-kpi-suffix=" mm">±0.000 mm</div>
+          <div class="kpi-ribbon-label">CMM Touch-Probe Accuracy</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="0" data-kpi-suffix=" Defects">0 Defects</div>
+          <div class="kpi-ribbon-label">Die Flow Lap Tolerance</div>
         </div>
       </div>
 
-      <div class="card" style="border-left: 3px solid var(--accent-amber); padding: 40px; margin-bottom: 64px;">
-        <h3>Collaborative Engineering Support</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 24px;">
-          Send your STEP, IGES, or SolidWorks models. Our CAD/CAM engineering team provides comprehensive DFM feedback within 48 hours, recommending draft angles, parting line optimizations, and raw material weight reductions.
+      <!-- Core Engineering Disciplines (3D Tilt Cards) -->
+      <div class="grid-2" style="margin-bottom: 80px; gap: 32px;">
+        
+        <!-- Discipline 01 -->
+        <div class="card card-3d-tilt" style="padding: 36px; border-top: 3px solid var(--accent-amber); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec">FEA & GRAIN SIMULATION</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-amber);">DEFORM-3D v13.2</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.4rem; margin-bottom: 12px; color: var(--text-primary);">Thermomechanical Grain Flow Modeling</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              We subject complex geometries to 3D deformation simulations at operating temperatures (950 °C - 1,200 °C) to ensure uninterrupted grain lines across high-stress filleted radii.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 16px; margin-bottom: 24px;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 8px; font-family: var(--font-mono);">SIMULATION ADVANTAGES:</div>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-mono);">
+                <li>&bull; Identifies die underfill and flash excess before cutting steel</li>
+                <li>&bull; Predicts post-quench thermal residual stress & distortion</li>
+                <li>&bull; Optimizes preform billet volume to achieve 85%+ material yield</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-fea-dossier" style="width: 100%; font-size: 0.85rem; padding: 12px;">
+            Examine Simulation Case Study &rarr;
+          </button>
+        </div>
+
+        <!-- Discipline 02 -->
+        <div class="card card-3d-tilt" style="padding: 36px; border-top: 3px solid var(--accent-steel); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-certified">IN-HOUSE TOOL ROOM</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-steel);">H13 / 1.2714 DIE BLOCKS</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.4rem; margin-bottom: 12px; color: var(--text-primary);">High-Speed Hard-Milling & Die Sinking</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              All forging impression dies, trimmer punches, and coining fixtures are manufactured in-house using 20,000 RPM high-speed hard milling and AgieCharmilles wire EDM.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 16px; margin-bottom: 24px;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-steel); margin-bottom: 8px; font-family: var(--font-mono);">TOOL ROOM ADVANTAGES:</div>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-mono);">
+                <li>&bull; Sinks dies directly in pre-hardened 52-54 HRC tool steel</li>
+                <li>&bull; Reduces prototype turnaround from 12 weeks to 18 days</li>
+                <li>&bull; Automated optical scanning verifies cavity wear after each batch</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-tooling-dossier" style="width: 100%; font-size: 0.85rem; padding: 12px;">
+            Examine Tooling Parameters &rarr;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- 4-Stage DFM Engineering Pipeline Switcher -->
+      <section style="margin-bottom: 80px;">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 36px;">
+          <span class="badge-spec" style="margin-bottom: 10px;">STAGE-GATE QUALITY GATES</span>
+          <h2 style="font-family: var(--font-grotesk); font-size: 1.8rem; margin-bottom: 10px; color: var(--text-primary);">From 3D CAD Ingestion to AS9102 FAI Sign-off</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Review the four milestone quality gates required before serial production begins.</p>
+        </div>
+
+        <div class="process-roadmap-wrapper">
+          <div class="roadmap-nav-pills">
+            <button class="roadmap-step-btn active" data-step-target="dfm-gate-1">
+              <span class="step-num">01</span>
+              <span>CAD Ingestion & DFM</span>
+            </button>
+            <button class="roadmap-step-btn" data-step-target="dfm-gate-2">
+              <span class="step-num">02</span>
+              <span>DEFORM Simulation</span>
+            </button>
+            <button class="roadmap-step-btn" data-step-target="dfm-gate-3">
+              <span class="step-num">03</span>
+              <span>Tooling Sinking</span>
+            </button>
+            <button class="roadmap-step-btn" data-step-target="dfm-gate-4">
+              <span class="step-num">04</span>
+              <span>CMM First Article</span>
+            </button>
+          </div>
+
+          <div class="roadmap-content-display">
+            <div id="dfm-gate-1" class="roadmap-step-panel active">
+              <span class="badge-spec" style="margin-bottom: 8px;">Gate 01 &bull; 24-48 Hours</span>
+              <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin: 8px 0 14px; color: var(--text-primary);">Geometric & Draft Angle Feasibility Review</h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px;">
+                Direct ingestion of native Catia, SolidWorks, or STEP CAD models. Checking draft angles (3° to 7°), corner fillets, parting line symmetry, and machining envelope margins.
+              </p>
+              <span class="badge-certified">&#10003; Automated DFM Feasibility Dossier Provided</span>
+            </div>
+
+            <div id="dfm-gate-2" class="roadmap-step-panel">
+              <span class="badge-spec" style="margin-bottom: 8px;">Gate 02 &bull; Days 3 to 7</span>
+              <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin: 8px 0 14px; color: var(--text-primary);">FEA Grain-Flow & Flash Volume Optimization</h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px;">
+                Thermomechanical virtual forging simulating press loads, die contact temperatures, and effective strain rates. Adjusting preform roll dies to guarantee flaw-free cavity fill.
+              </p>
+              <span class="badge-certified">&#10003; 100% Virtual Tryout Sign-off</span>
+            </div>
+
+            <div id="dfm-gate-3" class="roadmap-step-panel">
+              <span class="badge-spec" style="margin-bottom: 8px;">Gate 03 &bull; Days 8 to 15</span>
+              <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin: 8px 0 14px; color: var(--text-primary);">High-Speed Hard Milling of Impression Dies</h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px;">
+                Machining premium AISI H13 die blocks in our climate-controlled tool room. Cavities are hand-polished to mirror Ra 0.2 finish to ensure flawless hot metal release.
+              </p>
+              <span class="badge-certified">&#10003; Tooling Dimensional Calibration Report</span>
+            </div>
+
+            <div id="dfm-gate-4" class="roadmap-step-panel">
+              <span class="badge-spec" style="margin-bottom: 8px;">Gate 04 &bull; Days 16 to 18</span>
+              <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin: 8px 0 14px; color: var(--text-primary);">Hot Trial & Zeiss CMM First Article Inspection</h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 16px;">
+                Initial production strike on the 10,000T press followed by full 3D CMM touch-probe inspection, macro-etch grain structure sectioning, and AS9102 Form 1, 2, and 3 documentation.
+              </p>
+              <span class="badge-certified">&#10003; Signed AS9102 FAI Certificate Delivered</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom RFQ Callout -->
+      <div class="card" style="text-align: center; padding: 48px; background: linear-gradient(135deg, rgba(18, 21, 26, 0.95) 0%, rgba(10, 12, 14, 0.98) 100%); border: 1px solid var(--border-amber);">
+        <span class="badge-spec" style="margin-bottom: 12px;">DIRECT METALLURGICAL INQUIRY</span>
+        <h2 style="font-family: var(--font-grotesk); font-size: 2rem; margin: 12px 0 16px; color: var(--text-primary);">Upload Your 3D CAD Print for Feasibility Assessment</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 28px; font-size: 1rem;">
+          Our Senior DFM Engineers will review your STEP/IGES model and return a comprehensive grain-flow and tooling estimate within 24 hours.
         </p>
-        <a href="request-quote.html" class="btn btn-amber">Submit CAD Models for DFM Review</a>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="request-quote.html" class="btn btn-amber" style="padding: 14px 28px;">Upload 3D CAD Model &rarr;</a>
+          <a href="capabilities.html" class="btn btn-secondary" style="padding: 14px 28px;">Review Alloy Selector</a>
+        </div>
       </div>
+
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-bottom">
-      <div>&copy; 2026 ForgeCore Industries Ltd. Precision Heavy Engineering.</div>
-      <div style="color: var(--accent-amber);">ScaleNova EliteOS Demo Platform</div>
+  <!-- Interactive Modals for Engineering -->
+  <div id="modal-fea-dossier" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="fea-dossier-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="fea-dossier-title" class="modal-title">DEFORM-3D Simulation Engineering Case</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Case Study: Aerospace Titanium Ti-6Al-4V Compressor Disc Forging
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Simulation pinpointed critical strain localization in the inner hub web during stage-2 blocker strike.</li>
+          <li>&bull; Redesigned blocker preform fillet radius from 12 mm to 18 mm, reducing peak tool stress by 34%.</li>
+          <li>&bull; Result: Achieved 100% defect-free serial production run with unbroken concentric grain flow.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request FEA Consultation</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-tooling-dossier" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tooling-dossier-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="tooling-dossier-title" class="modal-title">In-House Tool Room Machine Specifications</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Equipped with advanced European high-speed hard milling and electrical discharge machining:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Roeders RXP 801 5-Axis High Speed Milling Center (36,000 RPM spindle).</li>
+          <li>&bull; Makino EDAF3 CNC Die Sinker with robotic C-axis electrode changer.</li>
+          <li>&bull; Hexagon Absolute Laser Arm for non-contact in-situ die cavity measurement.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Tooling Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer with Full Sitemap Links -->
+  <footer class="site-footer" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 64px 0 32px; position: relative; z-index: 1;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 48px;">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark">FC</div>
+            <span class="brand-name">FORGECORE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Heavy engineering, closed-die forging, and 5-axis CNC machining for aerospace, defense, energy, and automotive OEMs.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Operations</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="capabilities.html" style="color: inherit; text-decoration: none;">Capabilities Matrix</a></li>
+            <li><a href="manufacturing.html" style="color: inherit; text-decoration: none;">Manufacturing Facility</a></li>
+            <li><a href="engineering.html" style="color: inherit; text-decoration: none;">CAD / FEA Engineering</a></li>
+            <li><a href="quality-certifications.html" style="color: inherit; text-decoration: none;">Quality & Certifications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Commercial</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="industries.html" style="color: inherit; text-decoration: none;">Sectors & Industries</a></li>
+            <li><a href="projects.html" style="color: inherit; text-decoration: none;">Featured Projects</a></li>
+            <li><a href="contracts.html" style="color: inherit; text-decoration: none;">Supply Contracts</a></li>
+            <li><a href="insights.html" style="color: inherit; text-decoration: none;">Metallurgy Whitepapers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Engagement</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="request-quote.html" style="color: inherit; text-decoration: none;">Request Formal RFQ</a></li>
+            <li><a href="contact.html" style="color: inherit; text-decoration: none;">Plant Visit & Contact</a></li>
+            <li><a href="sitemap.xml" style="color: inherit; text-decoration: none;">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 12px;">
+        <div>&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Client Platform.</div>
+        <div>Plant: Chakan Industrial Area, Pune &bull; Global Exports: Nhava Sheva Port</div>
+      </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
 </body>
 </html>

@@ -36,6 +36,22 @@
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Plant Bar -->
+  <div class="top-plant-bar">
+    <div class="container top-plant-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="plant-status-dot"></span>
+        <span>PLANT WORKS 01 (PUNE): CAPACITY 84% OCCUPIED</span> &bull; 5-Axis DMG MORI Online
+      </div>
+      <div>
+        <a href="contracts.html" style="color:var(--accent-amber); text-decoration:none; margin-right:16px;">View Contract Tiers &rarr;</a>
+        RFQ Line: <a href="tel:+912067904000" style="color:#FFF; text-decoration:none;">+91 20 6790 4000</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Site Header -->
   <header class="site-header">
@@ -105,6 +121,10 @@
           <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
             <a href="request-quote.html" class="btn btn-primary">Request Manufacturing Quote &rarr;</a>
             <a href="manufacturing.html" class="btn btn-secondary">Explore Plant Capabilities</a>
+            <button type="button" onclick="openPlantTour()" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Watch Plant Tour (4K)
+            </button>
           </div>
 
           <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">
@@ -373,5 +393,44 @@
       }
     }
   </script>
+
+  <!-- Plant Tour Video Modal -->
+  <div class="modal-overlay" id="plantTourModal" onclick="if(event.target===this) closePlantTour()">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closePlantTour()">&times;</button>
+      <span class="mono-tag">[VIRTUAL WORKS INSPECTION &bull; 4K]</span>
+      <h3 style="margin: 10px 0 16px; color:#FFF;">ForgeCore Works 01: 12,000T Press & 5-Axis Machining</h3>
+      <div class="video-responsive-wrapper">
+        <video controls poster="assets/images/forgecore-industrial.jpg">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <p style="font-size: 0.85rem; color: #94A3B8; line-height: 1.6; font-family: var(--font-mono);">
+        Inspection of automated robotic billet induction heating, 12,000T closed-die hydraulic forging sequence, and high-velocity titanium contouring on DMG MORI 5-axis machines.
+      </p>
+      <div style="margin-top: 20px; display:flex; justify-content: flex-end; gap: 12px;">
+        <button class="btn btn-secondary" onclick="closePlantTour()">Close Window</button>
+        <a href="request-quote.html" class="btn btn-primary">Submit Technical RFQ &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPlantTour() {
+      document.getElementById('plantTourModal').classList.add('active');
+    }
+    function closePlantTour() {
+      const modal = document.getElementById('plantTourModal');
+      modal.classList.remove('active');
+      const video = modal.querySelector('video');
+      if (video) video.pause();
+    }
+  </script>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
 </body>
 </html>

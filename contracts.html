@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Manufacturing & Capacity Tiers — ForgeCore Industries</title>
+  <meta name="description" content="Precision forging and 5-axis machining capacity reservation, rapid prototype FAIR runs, and scheduled annual OEM blanket agreements. ISO 9001:2015 & AS9100D certified.">
+  <link rel="stylesheet" href="src/styles/theme.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23121214'/><text x='16' y='22' font-family='monospace' font-size='18' font-weight='bold' fill='%23F59E0B' text-anchor='middle'>F</text></svg>">
+</head>
+<body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Plant Bar -->
+  <div class="top-plant-bar">
+    <div class="container top-plant-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="plant-status-dot"></span>
+        <span>PLANT WORKS 01 (PUNE): CAPACITY 84% OCCUPIED</span> &bull; 5-Axis DMG MORI Online
+      </div>
+      <div>
+        RFQ Desk: <a href="tel:+912067904000" style="color:#FFF; text-decoration:none;">+91 20 6790 4000</a> &bull; ISO 9001 / AS9100D Certified
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">F</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Industries • Pune Works</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Plant Overview</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
+          <li><a href="contracts.html" class="nav-link active">Contract Tiers</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">QA & AS9100D</a></li>
+          <li><a href="about.html" class="nav-link">About Works</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.82rem;">Submit RFQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 72px 0 100px;">
+    <div class="container">
+      <div style="max-width: 760px; margin: 0 auto 56px; text-align: center;">
+        <span class="mono-tag">[CAPACITY ALLOCATION SPECIFICATION]</span>
+        <h1 style="margin: 14px 0 20px; font-family: var(--font-heading);">Industrial Production & Contract Tiers</h1>
+        <p class="lead" style="color: #94A3B8;">
+          Predictable lead-times, guaranteed CMM tolerance thresholds, and dedicated machine cells for Tier-1 aerospace, defense, and heavy mobility OEMs.
+        </p>
+      </div>
+
+      <div class="contract-grid">
+        <!-- Tier 1 -->
+        <div class="contract-card">
+          <span class="mono-tag">TIER 01 // PROTOTYPE</span>
+          <h3 style="margin-top: 10px; color:#FFF;">Rapid FAIR & Prototyping</h3>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-top: 8px;">
+            Fast-turnaround tooling and first article inspection for critical component qualification.
+          </p>
+          <div class="contract-lead-time">7–10 Days</div>
+          <div class="contract-spec-label">MOQ: 5 – 50 Units</div>
+          <ul class="contract-features">
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Full AS9102 Rev B FAIR Metrology Report</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Zeiss CMM 3D Laser Scanning Verification</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Complete Material Mill Test Certs (EN 10204 3.1)</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dedicated CAM Simulation & Toolpath Review</span>
+            </li>
+          </ul>
+          <a href="request-quote.html?tier=PrototypeFAIR" class="btn btn-secondary" style="width: 100%; text-align: center;">Request FAIR Quote &rarr;</a>
+        </div>
+
+        <!-- Tier 2 (Featured) -->
+        <div class="contract-card featured">
+          <div class="contract-badge">PRIMARY PRODUCTION</div>
+          <span class="mono-tag" style="color:var(--accent-amber);">TIER 02 // BATCH RUN</span>
+          <h3 style="margin-top: 10px; color:#FFF;">Scheduled Batch Production</h3>
+          <p style="color: #CBD5E1; font-size: 0.88rem; margin-top: 8px;">
+            High-volume CNC milling and closed-die forging runs with statistical process control (CpK &gt; 1.67).
+          </p>
+          <div class="contract-lead-time" style="color: var(--accent-amber);">3–4 Weeks</div>
+          <div class="contract-spec-label">MOQ: 500 – 5,000 Units</div>
+          <ul class="contract-features">
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dedicated 5-Axis DMG MORI Machining Cells</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Tolerances Held to ±0.005mm Consistently</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>In-House Controlled Atmosphere Heat Treatment</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>100% NDT Fluorescent Penetrant Inspection</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Export VCI Anti-Corrosion Packaging & Palletizing</span>
+            </li>
+          </ul>
+          <a href="request-quote.html?tier=BatchProduction" class="btn btn-primary" style="width: 100%; text-align: center;">Book Batch Capacity &rarr;</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="contract-card">
+          <span class="mono-tag">TIER 03 // OEM BLANKET</span>
+          <h3 style="margin-top: 10px; color:#FFF;">Annual OEM Blanket Agreement</h3>
+          <p style="color: #94A3B8; font-size: 0.88rem; margin-top: 8px;">
+            Reserved plant line capacity, vendor-managed inventory (VMI), and buffer stock for OEM supply chains.
+          </p>
+          <div class="contract-lead-time">48-Hr JIT</div>
+          <div class="contract-spec-label">Annual Volume: &gt; 10,000 Units</div>
+          <ul class="contract-features">
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Reserved 12,000T Hydraulic Forging Press Slots</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Vendor Managed Inventory (VMI) Buffer Hubs</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Fixed Alloy Index Pricing (Quarterly Adjustments)</span>
+            </li>
+            <li class="contract-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Dedicated Quality Lead & Resident Auditor Desk</span>
+            </li>
+          </ul>
+          <a href="request-quote.html?tier=AnnualOEM" class="btn btn-secondary" style="width: 100%; text-align: center;">Inquire Annual Contract &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Technical Industrial Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark">F</div>
+            <span class="brand-name">FORGECORE</span>
+          </div>
+          <p style="font-size: 0.85rem; line-height: 1.6; color: #94A3B8; max-width: 320px;">
+            ForgeCore Heavy Industries Private Limited &bull; CIN: U28910PN2023PTC219482 &bull; Industrial manufacturing and heavy 5-axis CNC machining partner.
+          </p>
+        </div>
+        <div>
+          <div class="footer-col-title">Capabilities</div>
+          <ul class="footer-nav">
+            <li><a href="manufacturing.html">12,000T Closed-Die Forging</a></li>
+            <li><a href="manufacturing.html">5-Axis DMG MORI Milling</a></li>
+            <li><a href="manufacturing.html">Inconel & Titanium Alloys</a></li>
+            <li><a href="contracts.html">Contract Tiers</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Quality & Compliance</div>
+          <ul class="footer-nav">
+            <li><a href="quality-certifications.html">AS9100D Certification</a></li>
+            <li><a href="quality-certifications.html">ISO 9001:2015 Scope</a></li>
+            <li><a href="quality-certifications.html">Zeiss Metrology Lab</a></li>
+            <li><a href="privacy.html">Plant Safety & NDA</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Plant Facilities</div>
+          <p style="font-size: 0.82rem; line-height: 1.8; color: #94A3B8; font-family: var(--font-mono);">
+            <strong>Works 01 (HQ):</strong> Plot B-14, Chakan MIDC Phase II, Pune 410501<br>
+            <strong>Works 02:</strong> Peenya Industrial Area, Bengaluru 560058<br>
+            <strong>RFQ Dispatch:</strong> rfq@forgecore.example.com
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 ForgeCore Heavy Industries Pvt Ltd. AS9100D & ISO 9001:2015. ScaleNova EliteOS Client Platform.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
+</body>
+</html>

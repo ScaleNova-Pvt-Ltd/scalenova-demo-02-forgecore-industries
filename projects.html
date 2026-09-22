@@ -4,75 +4,316 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engineering Projects & Case Studies — ForgeCore Industries</title>
-  <meta name="description" content="Proven manufacturing execution: high-volume automotive transmission forgings, subsea Inconel manifolds, and heavy defense drivetrain components.">
+  <meta name="description" content="Proven manufacturing execution: high-volume automotive EV planetary gears, subsea Inconel 718 manifolds, and aerospace turbine discs with full AS9102 inspection.">
+  <meta name="keywords" content="forging case studies, Inconel subsea manifold, commercial EV gears, aerospace turbine disc forging, AS9102 First Article">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Engineering Projects & Case Studies — ForgeCore Industries">
+  <meta property="og:description" content="Documented case studies of tight-tolerance OEM deliveries, subsea manifolds, and aerospace components.">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "ForgeCore Engineering Case Studies",
+    "description": "Proven industrial manufacturing milestones across aerospace, energy, and automotive sectors.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ForgeCore Industries"
+    }
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Industrial Top Bar -->
+  <div class="top-dispatch-bar" style="background: #0A0C0E; border-bottom: 1px solid var(--border-amber); padding: 8px 0; font-size: 0.8rem;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-amber); border-radius: 50%; box-shadow: 0 0 8px var(--accent-amber);"></span>
+        <span style="font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;">VERIFIED MILESTONES</span> &bull; 0 Field Recalls Across 12 Years &bull; 100% CMM Traceability
+      </div>
+      <div>
+        <a href="contracts.html" style="color: #FFF; text-decoration: none; margin-right: 16px; font-weight: 600;">Long-Term Supply Contracts &rarr;</a>
+        Engineering Desk: <a href="tel:+912069803200" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">+91 20 6980 3200</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="projects.html" class="nav-link active">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul></nav>
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Heavy Engineering &bull; Metallurgy</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+          <li><a href="contracts.html" class="nav-link">Contracts</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
       <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
     </div>
   </header>
 
-  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px; position: relative; z-index: 1;">
     <div class="container">
-      <div style="max-width: 820px; margin-bottom: 64px;">
-        <span class="eyebrow">Proven Field Performance</span>
-        <h1>Industrial Case Studies & Production Milestones</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
-          Review our track record across complex manufacturing turnarounds, tight-tolerance OEM deliveries, and mission-critical alloy fabrications.
+      
+      <!-- Hero Headline with Badge -->
+      <div style="max-width: 860px; margin-bottom: 48px;">
+        <span class="badge-spec" style="margin-bottom: 12px;">PROVEN OEM MILESTONES</span>
+        <h1 style="font-family: var(--font-grotesk); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; color: var(--text-primary);">
+          Featured Engineering Deliveries & Case Studies.
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; max-width: 740px;">
+          Empirical documentation of high-stress component deliveries, tight-tolerance OEM machining programs, and subsea superalloy fabrications.
         </p>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 64px;">
-        <div class="card">
-          <span class="spec-badge">CASE STUDY #01</span>
-          <h3>Deepwater High-Pressure Subsea Manifold</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 16px;">
-            <strong>Client:</strong> Global Tier 1 Offshore Energy Contractor<br>
-            <strong>Material:</strong> Inconel 718 Nickel Superalloy<br>
-            <strong>Challenge:</strong> 120-piece delivery required within 10 weeks, zero detectable internal grain voids under AMS 2631 Class AA ultrasonic testing.
-          </p>
-          <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 4px; border-left: 2px solid var(--accent-amber); font-size: 0.85rem; color: #D1D5DB;">
-            <strong>Outcome:</strong> ForgeCore executed custom near-net shape tooling in 14 days, finished 5-axis CNC machining, and delivered 100% compliant parts 4 days ahead of scheduled installation.
-          </div>
+      <!-- Live Engineering KPI Ribbon -->
+      <div class="kpi-ribbon-container" style="margin-bottom: 64px;">
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="10000" data-kpi-suffix=" PSI">0 PSI</div>
+          <div class="kpi-ribbon-label">Subsea Hydrostatic Pressure Tested</div>
         </div>
-
-        <div class="card">
-          <span class="spec-badge">CASE STUDY #02</span>
-          <h3>Heavy Commercial Vehicle Planetary Ring Gears</h3>
-          <p style="color: var(--text-secondary); margin-bottom: 16px;">
-            <strong>Client:</strong> Leading Heavy Commercial EV Manufacturer<br>
-            <strong>Material:</strong> 20MnCr5 Forged Case-Hardening Alloy<br>
-            <strong>Challenge:</strong> Severe noise-vibration-harshness (NVH) failure in cast competitors under high electric torque peaks.
-          </p>
-          <div style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 4px; border-left: 2px solid var(--accent-amber); font-size: 0.85rem; color: #D1D5DB;">
-            <strong>Outcome:</strong> Transitioned customer to closed-die continuous-grain forging, boosting torsional fatigue threshold by 42% while reducing unit raw material cost by 18%.
-          </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="120000" data-kpi-suffix="+">0+</div>
+          <div class="kpi-ribbon-label">Commercial EV Ring Gears Delivered</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="100" data-kpi-suffix="%">0%</div>
+          <div class="kpi-ribbon-label">AS9102 First Article Approval Rate</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="0" data-kpi-suffix=" Recalls">0 Recalls</div>
+          <div class="kpi-ribbon-label">Field Defect Record Over 12 Years</div>
         </div>
       </div>
+
+      <!-- 3D Tilt Case Study Grid -->
+      <div style="display: flex; flex-direction: column; gap: 48px; margin-bottom: 80px;">
+        
+        <!-- Project 01 -->
+        <article class="card card-3d-tilt" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; padding: 32px; border-left: 4px solid var(--accent-amber);">
+          <div style="border-radius: 6px; overflow: hidden; min-height: 260px; position: relative;">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="Subsea Inconel Manifold Machining" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 16px; left: 16px; background: rgba(10, 12, 14, 0.88); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-family: var(--font-mono); color: var(--accent-amber); border: 1px solid var(--border-amber);">
+              ENERGY & OFFSHORE &bull; INCONEL 718
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="badge-spec" style="margin-bottom: 8px;">SUBSEA WELLHEADS</span>
+              <h2 style="font-family: var(--font-grotesk); font-size: 1.5rem; margin-bottom: 12px; color: var(--text-primary);">
+                Deepwater 10,000 PSI High-Pressure Manifold Block
+              </h2>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                Forged from vacuum induction melted (VIM-VAR) Inconel 718. Requiring zero detectable internal void defects under AMS 2631 Class AA immersion ultrasonic scanning.
+              </p>
+              
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 4px;">
+                  <div style="color: var(--accent-amber); font-weight: 700; font-size: 1.2rem; font-family: var(--font-mono);">10,000 PSI</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Working Pressure</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 4px;">
+                  <div style="color: var(--accent-steel); font-weight: 700; font-size: 1.2rem; font-family: var(--font-mono);">14 Days</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Tooling Delivery</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 4px;">
+                  <div style="color: #10B981; font-weight: 700; font-size: 1.2rem; font-family: var(--font-mono);">100% Pass</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Ultrasonic Class AA</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button class="btn btn-secondary" data-open-modal="modal-project-subsea" style="font-size: 0.85rem; padding: 10px 18px;">
+                View Engineering Inspection Dossier &rarr;
+              </button>
+              <a href="request-quote.html" class="btn btn-amber" style="font-size: 0.85rem; padding: 10px 18px;">Request Similar RFQ</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="card card-3d-tilt" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; padding: 32px; border-left: 4px solid var(--accent-steel);">
+          <div style="border-radius: 6px; overflow: hidden; min-height: 260px; position: relative;">
+            <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=900&q=80" alt="Commercial EV Gear Ring Forging" style="width: 100%; height: 100%; object-fit: cover;">
+            <div style="position: absolute; top: 16px; left: 16px; background: rgba(10, 12, 14, 0.88); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 4px; font-size: 0.75rem; font-family: var(--font-mono); color: var(--accent-steel); border: 1px solid rgba(56, 189, 248, 0.4);">
+              COMMERCIAL EV &bull; 20MnCr5 ALLOY
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <span class="badge-certified" style="margin-bottom: 8px;">HIGH-VOLUME DRIVETRAIN</span>
+              <h2 style="font-family: var(--font-grotesk); font-size: 1.5rem; margin-bottom: 12px; color: var(--text-primary);">
+                Heavy Commercial EV Planetary Ring Gears (120,000 Units/Year)
+              </h2>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                Forged near-net shape seamless rolled rings in 20MnCr5 case-hardening chrome steel with in-line induction normalizing and automated broaching.
+              </p>
+              
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 4px;">
+                  <div style="color: var(--accent-steel); font-weight: 700; font-size: 1.2rem; font-family: var(--font-mono);">120,000</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Annual Units Delivered</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 4px;">
+                  <div style="color: var(--accent-amber); font-weight: 700; font-size: 1.2rem; font-family: var(--font-mono);">60-62 HRC</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Case Hardness</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 4px;">
+                  <div style="color: #10B981; font-weight: 700; font-size: 1.2rem; font-family: var(--font-mono);">99.92%</div>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Kanban JIT Adherence</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <button class="btn btn-secondary" data-open-modal="modal-project-ev" style="font-size: 0.85rem; padding: 10px 18px;">
+                View Engineering Inspection Dossier &rarr;
+              </button>
+              <a href="request-quote.html" class="btn btn-amber" style="font-size: 0.85rem; padding: 10px 18px;">Request Similar RFQ</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom RFQ Callout -->
+      <div class="card" style="text-align: center; padding: 48px; background: linear-gradient(135deg, rgba(18, 21, 26, 0.95) 0%, rgba(10, 12, 14, 0.98) 100%); border: 1px solid var(--border-amber);">
+        <span class="badge-spec" style="margin-bottom: 12px;">ENGINEERING CONFIDENTIALITY</span>
+        <h2 style="font-family: var(--font-grotesk); font-size: 2rem; margin: 12px 0 16px; color: var(--text-primary);">Protecting Your Proprietary Tooling & Prints</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 28px; font-size: 1rem;">
+          All customer drawing files, CAD models, and die tooling remain the exclusive intellectual property of the commissioning OEM under bilateral NDA agreements.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="request-quote.html" class="btn btn-amber" style="padding: 14px 28px;">Initiate NDA & RFQ &rarr;</a>
+          <a href="contracts.html" class="btn btn-secondary" style="padding: 14px 28px;">Review Master Agreement Terms</a>
+        </div>
+      </div>
+
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-bottom">
-      <div>&copy; 2026 ForgeCore Industries Ltd. All rights reserved.</div>
-      <div style="color: var(--accent-amber);">ScaleNova EliteOS Demo Platform</div>
+  <!-- Interactive Project Modals -->
+  <div id="modal-project-subsea" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="subsea-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="subsea-title" class="modal-title">Subsea Manifold Inspection Dossier</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Delivered under strict DNV-OS-F101 submarine pipeline and API 6A 21st Edition PSL 3G requirements:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; 100% full-body immersion ultrasonic inspection confirming AMS 2631 Class AA standards.</li>
+          <li>&bull; 10,000 PSI hydrostatic pressure test sustained for 4 continuous hours with zero pressure drop.</li>
+          <li>&bull; ASTM G48 Method A ferric chloride pitting corrosion test (0.00 g/m² mass loss at 50 °C).</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Offshore Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-project-ev" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ev-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="ev-title" class="modal-title">Commercial EV Gear Ring Inspection Dossier</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Production program supplying 120,000 units/year directly to commercial EV truck assembly lines:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Radial-axial ring rolling holding ±0.3 mm forging stock on inner diameter.</li>
+          <li>&bull; Carburized case depth of 1.4 mm to 1.8 mm with 60-62 HRC surface hardness.</li>
+          <li>&bull; Zero gear tooth pitch runout deviations under Zeiss gear testing software.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Drivetrain Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer with Full Sitemap Links -->
+  <footer class="site-footer" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 64px 0 32px; position: relative; z-index: 1;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 48px;">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark">FC</div>
+            <span class="brand-name">FORGECORE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Heavy engineering, closed-die forging, and 5-axis CNC machining for aerospace, defense, energy, and automotive OEMs.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Operations</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="capabilities.html" style="color: inherit; text-decoration: none;">Capabilities Matrix</a></li>
+            <li><a href="manufacturing.html" style="color: inherit; text-decoration: none;">Manufacturing Facility</a></li>
+            <li><a href="engineering.html" style="color: inherit; text-decoration: none;">CAD / FEA Engineering</a></li>
+            <li><a href="quality-certifications.html" style="color: inherit; text-decoration: none;">Quality & Certifications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Commercial</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="industries.html" style="color: inherit; text-decoration: none;">Sectors & Industries</a></li>
+            <li><a href="projects.html" style="color: inherit; text-decoration: none;">Featured Projects</a></li>
+            <li><a href="contracts.html" style="color: inherit; text-decoration: none;">Supply Contracts</a></li>
+            <li><a href="insights.html" style="color: inherit; text-decoration: none;">Metallurgy Whitepapers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Engagement</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="request-quote.html" style="color: inherit; text-decoration: none;">Request Formal RFQ</a></li>
+            <li><a href="contact.html" style="color: inherit; text-decoration: none;">Plant Visit & Contact</a></li>
+            <li><a href="sitemap.xml" style="color: inherit; text-decoration: none;">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 12px;">
+        <div>&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Client Platform.</div>
+        <div>Plant: Chakan Industrial Area, Pune &bull; Global Exports: Nhava Sheva Port</div>
+      </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
 </body>
 </html>

@@ -3,62 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foundry & Plant Infrastructure — ForgeCore Industries</title>
-  <meta name="description" content="Discover ForgeCore's 45,000 sq.meter integrated forging, machining, and heat-treatment facilities in Pune and Coimbatore.">
+  <title>Foundry Heritage & Plant Infrastructure — ForgeCore Industries</title>
+  <meta name="description" content="Discover ForgeCore's 45,000 sq. meter integrated heavy forging, CNC machining, and metallurgical testing plants in Pune, Coimbatore, and Chennai.">
+  <meta name="keywords" content="ForgeCore foundry, heavy engineering plants Pune, Coimbatore CNC machining, forging infrastructure India, AS9100D facility">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Foundry Heritage & Plant Infrastructure — ForgeCore Industries">
+  <meta property="og:description" content="30 years of metallurgical precision across 45,000 m² of heavy industrial manufacturing plants.">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About ForgeCore Industries",
+    "description": "Plant infrastructure, heavy forging equipment, and heritage of ForgeCore Industries.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ForgeCore Industries"
+    }
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Industrial Top Bar -->
+  <div class="top-dispatch-bar" style="background: #0A0C0E; border-bottom: 1px solid var(--border-amber); padding: 8px 0; font-size: 0.8rem;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-amber); border-radius: 50%; box-shadow: 0 0 8px var(--accent-amber);"></span>
+        <span style="font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;">PLANT INFRASTRUCTURE</span> &bull; 45,000 m² Under Crane &bull; 3 Operating Works &bull; Pune &bull; Coimbatore
+      </div>
+      <div>
+        <a href="contracts.html" style="color: #FFF; text-decoration: none; margin-right: 16px; font-weight: 600;">Supply Contracts &rarr;</a>
+        Operations Desk: <a href="tel:+912069803200" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">+91 20 6980 3200</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link active">About</a></li>
-        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul></nav>
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Heavy Engineering &bull; Metallurgy</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+          <li><a href="contracts.html" class="nav-link">Contracts</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
       <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
     </div>
   </header>
 
-  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px; position: relative; z-index: 1;">
     <div class="container">
-      <div style="max-width: 820px; margin-bottom: 64px;">
-        <span class="eyebrow">Plant Heritage & Heavy Infrastructure</span>
-        <h1>30 Years of Uncompromising Metallurgical Precision</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
-          Operating out of 3 modern manufacturing plants spanning 45,000 m² under crane, ForgeCore supplies mission-critical structural forgings and precision machined assemblies to Fortune 500 engineering corporations.
+      
+      <!-- Hero Headline with Badge -->
+      <div style="max-width: 860px; margin-bottom: 48px;">
+        <span class="badge-spec" style="margin-bottom: 12px;">30 YEARS OF METALLURGICAL LEADERSHIP</span>
+        <h1 style="font-family: var(--font-grotesk); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; color: var(--text-primary);">
+          Heavy Plant Capital Assets & Industrial Heritage.
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; max-width: 740px;">
+          Operating out of 3 modern manufacturing facilities spanning 45,000 m² under crane, ForgeCore supplies mission-critical structural forgings and precision machined assemblies to Fortune 500 engineering corporations.
         </p>
       </div>
 
-      <div class="grid-2" style="margin-bottom: 64px; align-items: center;">
-        <div>
-          <h2>Heavy Plant Capital Assets</h2>
-          <p>Our Pune plant (Works 1) houses 4 closed-die forging lines anchored by a 10,000-ton hydraulic forging press, induction billet heaters, and automated manipulators.</p>
-          <p>Works 2 in Coimbatore is dedicated to climate-controlled multi-axis machining with 45 horizontal and vertical CNC machining centers, while Works 3 in Chennai serves as our export staging, ultrasonic immersion testing, and packaging logistics terminal.</p>
+      <!-- Live Infrastructure KPI Ribbon -->
+      <div class="kpi-ribbon-container" style="margin-bottom: 64px;">
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="45000" data-kpi-suffix=" m²">0 m²</div>
+          <div class="kpi-ribbon-label">Covered Manufacturing Footprint</div>
         </div>
-        <div class="card">
-          <span class="eyebrow">Works 1 Specifications</span>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; font-family: var(--font-mono);">
-            <li><strong style="color: var(--accent-amber);">Press Tonnage:</strong> 1,200T to 10,000T Closed Die</li>
-            <li><strong style="color: var(--accent-amber);">Hammer Fleet:</strong> 3T, 5T, 8T Counterblow Systems</li>
-            <li><strong style="color: var(--accent-amber);">Billet Cutting:</strong> Kasto High-Precision Bandsaws</li>
-            <li><strong style="color: var(--accent-amber);">Heat Treat:</strong> Continuous Quench & Temper Line</li>
-          </ul>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="3" data-kpi-suffix=" Plants">0 Plants</div>
+          <div class="kpi-ribbon-label">Operational Works in India</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="30" data-kpi-suffix=" Years">0 Years</div>
+          <div class="kpi-ribbon-label">Continuous Metallurgical Heritage</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="35" data-kpi-suffix=" Tons">0 Tons</div>
+          <div class="kpi-ribbon-label">Single Crane Lifting Capacity</div>
         </div>
       </div>
+
+      <!-- Three Manufacturing Works (3D Tilt Cards) -->
+      <div class="grid-3" style="margin-bottom: 80px;">
+        
+        <!-- Works 01 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--accent-amber);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec">WORKS 01 &bull; PUNE</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-amber);">CHAKAN MIDC</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">Heavy Press & Ring Rolling Facility</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Our primary heavy forging plant housing 4 closed-die press lines, 10,000-ton hydraulic forging press, raw ingot stockyard, and continuous heat-treatment quench tanks.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+              Area: 25,000 m² Covered<br>
+              Focus: Heavy Turbine Discs & Ring Gears<br>
+              Power: 22 kV Dedicated Substation
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-works-pune" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Pune Facility Spec &rarr;
+          </button>
+        </div>
+
+        <!-- Works 02 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--accent-steel);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-certified">WORKS 02 &bull; COIMBATORE</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-steel);">TAMIL NADU</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">5-Axis CNC Precision Clean Room</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Dedicated to high-velocity finish contouring with 45 horizontal and vertical CNC machining centers, wire EDM, and Zeiss coordinate measuring metrology.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+              Area: 14,000 m² Climate-Controlled<br>
+              Focus: 5-Axis Superalloy Blisks & Hubs<br>
+              Tolerance: ±0.003 mm Guaranteed
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-works-cbe" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Coimbatore Spec &rarr;
+          </button>
+        </div>
+
+        <!-- Works 03 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10B981;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec" style="color: #10B981; border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.12);">WORKS 03 &bull; CHENNAI</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #10B981;">PORT LOGISTICS</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">Export Logistics & NDT Inspection Hub</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Serves as our final staging terminal for international sea freight shipments, automated rust-preventive dipping tanks, and immersion ultrasonic testing.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+              Area: 6,000 m² Staging Facility<br>
+              Focus: Export Crating & Customs Sealing<br>
+              Access: Direct Ennore / Chennai Port Access
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-works-chn" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Chennai Logistics Spec &rarr;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Bottom RFQ Callout -->
+      <div class="card" style="text-align: center; padding: 48px; background: linear-gradient(135deg, rgba(18, 21, 26, 0.95) 0%, rgba(10, 12, 14, 0.98) 100%); border: 1px solid var(--border-amber);">
+        <span class="badge-spec" style="margin-bottom: 12px;">GLOBAL OEM SOURCING</span>
+        <h2 style="font-family: var(--font-grotesk); font-size: 2rem; margin: 12px 0 16px; color: var(--text-primary);">Partner with India's Premier Heavy Engineering Leader</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 28px; font-size: 1rem;">
+          Let's discuss dedicated production cell allocation, long-term raw material hedging, and supply chain localization for your high-stress components.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-amber" style="padding: 14px 28px;">Connect with Leadership &rarr;</a>
+          <a href="request-quote.html" class="btn btn-secondary" style="padding: 14px 28px;">Submit RFQ Online</a>
+        </div>
+      </div>
+
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Demonstration.</div>
+  <!-- Interactive Modals for Facilities -->
+  <div id="modal-works-pune" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="pune-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="pune-title" class="modal-title">Works 01 (Pune) Equipment Roster</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Primary heavy forging assets installed at Chakan Industrial Area:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; 10,000-Ton Schloemann hydraulic press with automated die lubrication.</li>
+          <li>&bull; 4,500-Ton open-die hydraulic press with 150 kNm mobile manipulator.</li>
+          <li>&bull; RAWSTOCK: 3,500 MT indoor storage with heated low-humidity atmosphere.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="contact.html" class="btn btn-amber">Schedule Works 1 Audit</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-works-cbe" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cbe-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="cbe-title" class="modal-title">Works 02 (Coimbatore) Machine Roster</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Climate-controlled precision machining assets:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; 14 &times; DMG Mori DMU 200P 5-axis milling centers with 120-tool magazines.</li>
+          <li>&bull; 6 &times; Mazak Integrex e-670H multi-tasking mill-turn centers.</li>
+          <li>&bull; Zeiss Prismo Ultra Coordinate Measuring Machine with 0.5 µm volumetric accuracy.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="contact.html" class="btn btn-amber">Schedule Works 2 Audit</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-works-chn" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="chn-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="chn-title" class="modal-title">Works 03 (Chennai) Export Operations</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Logistics and non-destructive examination operations:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Automated ultrasonic immersion scanning bath for round bars and rings.</li>
+          <li>&bull; VCI (Vapor Corrosion Inhibitor) climate packaging and heavy timber export crating to ISPM 15 standards.</li>
+          <li>&bull; 45 minutes to Chennai and Ennore container shipping terminals.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="contact.html" class="btn btn-amber">Schedule Works 3 Audit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer with Full Sitemap Links -->
+  <footer class="site-footer" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 64px 0 32px; position: relative; z-index: 1;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 48px;">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark">FC</div>
+            <span class="brand-name">FORGECORE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Heavy engineering, closed-die forging, and 5-axis CNC machining for aerospace, defense, energy, and automotive OEMs.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Operations</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="capabilities.html" style="color: inherit; text-decoration: none;">Capabilities Matrix</a></li>
+            <li><a href="manufacturing.html" style="color: inherit; text-decoration: none;">Manufacturing Facility</a></li>
+            <li><a href="engineering.html" style="color: inherit; text-decoration: none;">CAD / FEA Engineering</a></li>
+            <li><a href="quality-certifications.html" style="color: inherit; text-decoration: none;">Quality & Certifications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Commercial</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="industries.html" style="color: inherit; text-decoration: none;">Sectors & Industries</a></li>
+            <li><a href="projects.html" style="color: inherit; text-decoration: none;">Featured Projects</a></li>
+            <li><a href="contracts.html" style="color: inherit; text-decoration: none;">Supply Contracts</a></li>
+            <li><a href="insights.html" style="color: inherit; text-decoration: none;">Metallurgy Whitepapers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Engagement</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="request-quote.html" style="color: inherit; text-decoration: none;">Request Formal RFQ</a></li>
+            <li><a href="contact.html" style="color: inherit; text-decoration: none;">Plant Visit & Contact</a></li>
+            <li><a href="sitemap.xml" style="color: inherit; text-decoration: none;">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 12px;">
+        <div>&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Client Platform.</div>
+        <div>Plant: Chakan Industrial Area, Pune &bull; Global Exports: Nhava Sheva Port</div>
+      </div>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
 </body>
 </html>

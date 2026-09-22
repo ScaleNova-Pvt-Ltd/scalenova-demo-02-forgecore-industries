@@ -3,80 +3,489 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manufacturing Capabilities — ForgeCore Industries</title>
-  <meta name="description" content="Detailed engineering specifications for heavy closed-die forging, 5-axis CNC machining, and heat treatment.">
+  <title>Manufacturing Capabilities & Metallurgy — ForgeCore Industries</title>
+  <meta name="description" content="Technical parameters for 10,000-ton hydraulic closed-die forging, 5-axis DMG Mori CNC machining, and NADCAP-accredited heat treatment facilities.">
+  <meta name="keywords" content="heavy forging capabilities, 10000 ton hydraulic press, 5 axis CNC machining, titanium forging, Inconel 718 superalloys, AS9100D">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Manufacturing Capabilities & Metallurgy — ForgeCore Industries">
+  <meta property="og:description" content="Precision closed-die and open-die forging up to 8.5 tons with ±0.003 mm CNC repeatability.">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Heavy Industrial Forging & CNC Precision Machining",
+    "provider": {
+      "@type": "Organization",
+      "name": "ForgeCore Industries"
+    },
+    "description": "Heavy industrial forging, 5-axis precision machining, and NADCAP certified metallurgical heat treatment."
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Industrial Top Bar -->
+  <div class="top-dispatch-bar" style="background: #0A0C0E; border-bottom: 1px solid var(--border-amber); padding: 8px 0; font-size: 0.8rem;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-amber); border-radius: 50%; box-shadow: 0 0 8px var(--accent-amber);"></span>
+        <span style="font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;">PLANT Q3 ACTIVE</span> &bull; 10,000T Hydraulic Press Line Operational &bull; AS9100D Certified
+      </div>
+      <div>
+        <a href="contracts.html" style="color: #FFF; text-decoration: none; margin-right: 16px; font-weight: 600;">Long-Term Supply Contracts &rarr;</a>
+        Metallurgy Desk: <a href="tel:+912069803200" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">+91 20 6980 3200</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="capabilities.html" class="nav-link active">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul></nav>
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Heavy Engineering &bull; Metallurgy</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="capabilities.html" class="nav-link active">Capabilities</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
+          <li><a href="contracts.html" class="nav-link">Contracts</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
       <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
     </div>
   </header>
 
-  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px; position: relative; z-index: 1;">
     <div class="container">
-      <div style="max-width: 820px; margin-bottom: 64px;">
-        <span class="eyebrow">Technical Parameters</span>
-        <h1>Industrial Capabilities Matrix</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
-          End-to-end heavy engineering under one roof — from ingot procurement and CAD simulation to finish machining and AS9100 documentation.
+      
+      <!-- Hero Headline with Engineering Badge -->
+      <div style="max-width: 860px; margin-bottom: 48px;">
+        <span class="badge-spec" style="margin-bottom: 12px;">AS9100D &bull; ISO 9001:2015 &bull; NADCAP ACCREDITED</span>
+        <h1 style="font-family: var(--font-grotesk); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; color: var(--text-primary);">
+          Heavy Industrial Capabilities & Precision Metallurgy.
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; max-width: 740px;">
+          End-to-end heavy manufacturing under one roof — from vacuum-melted ingot billets and 10,000-ton hydraulic forging to 5-axis CNC machining and ultrasonic NDT inspection.
         </p>
       </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <span class="spec-badge">FORGING</span>
-          <h3>Forging Lines</h3>
-          <ul style="font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); margin-left: 20px;">
-            <li>10,000-Ton Hydraulic Press</li>
-            <li>Closed-Die up to 250 kg piece weight</li>
-            <li>Open-Die rings & shafts up to 8.5 tons</li>
-            <li>Billet Heating: Dual-frequency induction</li>
-          </ul>
+      <!-- Live Metallurgy KPI Stat Ribbon -->
+      <div class="kpi-ribbon-container" style="margin-bottom: 64px;">
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="10000" data-kpi-suffix=" Tons">0 Tons</div>
+          <div class="kpi-ribbon-label">Max Press Forging Force</div>
         </div>
-
-        <div class="card">
-          <span class="spec-badge">MACHINING</span>
-          <h3>5-Axis CNC Machining</h3>
-          <ul style="font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); margin-left: 20px;">
-            <li>Mazak Integrex Multi-Tasking Centers</li>
-            <li>DMG Mori 5-Axis Milling Centers</li>
-            <li>Working Envelope: up to 3,000 x 2,000 x 1,500 mm</li>
-            <li>Repeatability: ±0.003 mm</li>
-          </ul>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="0.003" data-kpi-prefix="±" data-kpi-suffix=" mm">±0.000 mm</div>
+          <div class="kpi-ribbon-label">5-Axis CNC Repeatability</div>
         </div>
-
-        <div class="card">
-          <span class="spec-badge">TREATMENT</span>
-          <h3>Heat Treatment & Finish</h3>
-          <ul style="font-size: 0.85rem; line-height: 1.8; color: var(--text-secondary); margin-left: 20px;">
-            <li>Continuous Solution Annealing & Quenching</li>
-            <li>Gas Carburizing & Liquid Nitriding</li>
-            <li>Shot Blasting (Steel Grit SAE G25)</li>
-            <li>Zinc Phosphate & Passivation Tank Lines</li>
-          </ul>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="8500" data-kpi-suffix=" kg">0 kg</div>
+          <div class="kpi-ribbon-label">Max Open-Die Component Weight</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="100" data-kpi-suffix="%">0%</div>
+          <div class="kpi-ribbon-label">Ultrasonic & CMM Traceability</div>
         </div>
       </div>
+
+      <!-- Three Core Production Pillars (3D Tilt Cards) -->
+      <div class="grid-3" style="margin-bottom: 80px;">
+        
+        <!-- Pillar 01 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--accent-amber);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec">HEAVY FORGING</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-amber);">LINE 01 &bull; HYDRAULIC</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">Closed & Open-Die Forging</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Forging unbroken grain-flow structural components engineered to withstand cyclic shock loads in mission-critical applications.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-mono);">
+                <li>&bull; 10,000-Ton Hydraulic Multi-Ram Press</li>
+                <li>&bull; Closed-die forgings up to 250 kg piece weight</li>
+                <li>&bull; Seamless rolled rings up to 4,200 mm diameter</li>
+                <li>&bull; Dual-frequency induction billet heating</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-forging-spec" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Forging Parameters &rarr;
+          </button>
+        </div>
+
+        <!-- Pillar 02 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--accent-steel);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-certified">PRECISION CNC</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-steel);">5-AXIS &bull; DMG MORI</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">5-Axis Multi-Tasking Machining</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              High-velocity milling, turning, and EDM wire eroding of complex contoured geometries in high-hardness superalloys.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-mono);">
+                <li>&bull; Mazak Integrex Multi-Tasking Centers</li>
+                <li>&bull; DMG Mori DMU 200P 5-Axis Centers</li>
+                <li>&bull; Working Envelope: 3,000 &times; 2,000 &times; 1,500 mm</li>
+                <li>&bull; High-pressure through-spindle coolant (70 bar)</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-machining-spec" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect CNC Envelope &rarr;
+          </button>
+        </div>
+
+        <!-- Pillar 03 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10B981;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec" style="color: #10B981; border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.12);">HEAT TREATMENT</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #10B981;">NADCAP ACCREDITED</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">Thermal & Metallurgical Processing</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Computer-controlled furnace lines with calibrated thermocouple arrays ensuring uniform grain structure and specified mechanical hardness.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); font-family: var(--font-mono);">
+                <li>&bull; Solution Annealing, Aging, Quenching</li>
+                <li>&bull; Vacuum heat treating for reactive superalloys</li>
+                <li>&bull; Automated polymer, oil, and water quench tanks</li>
+                <li>&bull; In-house Brinell & Rockwell hardness testing</li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-heat-spec" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Thermal Controls &rarr;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Interactive Metallurgical Alloy Selector -->
+      <section style="margin-bottom: 80px;">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 36px;">
+          <span class="badge-spec" style="margin-bottom: 10px;">MATERIAL GRADE SELECTOR</span>
+          <h2 style="font-family: var(--font-grotesk); font-size: 1.8rem; margin-bottom: 10px; color: var(--text-primary);">Certified Engineering Superalloys</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Select an alloy grade below to review mechanical properties, yield strength, and temperature tolerances.</p>
+        </div>
+
+        <div class="alloy-spec-wrapper">
+          <div class="alloy-nav-pills">
+            <button class="alloy-tab-btn active" data-alloy-target="alloy-ti64">
+              <span class="alloy-code">Ti-6Al-4V</span>
+              <span>Titanium Grade 5</span>
+            </button>
+            <button class="alloy-tab-btn" data-alloy-target="alloy-inconel">
+              <span class="alloy-code">IN-718</span>
+              <span>Inconel Superalloy</span>
+            </button>
+            <button class="alloy-tab-btn" data-alloy-target="alloy-4340">
+              <span class="alloy-code">AISI 4340</span>
+              <span>Chrome-Moly Steel</span>
+            </button>
+            <button class="alloy-tab-btn" data-alloy-target="alloy-174ph">
+              <span class="alloy-code">17-4 PH</span>
+              <span>Precipitation Stainless</span>
+            </button>
+          </div>
+
+          <div class="alloy-content-display">
+            <!-- Ti-6Al-4V -->
+            <div id="alloy-ti64" class="alloy-spec-panel active">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="font-family: var(--font-grotesk); font-size: 1.4rem; color: var(--text-primary);">Titanium Grade 5 (Ti-6Al-4V / AMS 4928)</h3>
+                <span class="badge-spec">AEROSPACE & MEDICAL GRADE</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px;">
+                The cornerstone aerospace alloy combining exceptional strength-to-weight ratio, excellent fracture toughness, and superior corrosion resistance in marine and atmospheric environments.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">TENSILE STRENGTH</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">950 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">YIELD STRENGTH (0.2%)</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-steel); font-family: var(--font-mono);">880 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">MAX OPERATING TEMP</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: #10B981; font-family: var(--font-mono);">400 °C</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">DENSITY</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono);">4.43 g/cm³</div>
+                </div>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Typical Components:</strong> Jet engine fan blades, compressor discs, fuselage structural bulkheads, and orthopaedic implants.
+              </div>
+            </div>
+
+            <!-- Inconel 718 -->
+            <div id="alloy-inconel" class="alloy-spec-panel">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="font-family: var(--font-grotesk); font-size: 1.4rem; color: var(--text-primary);">Inconel 718 (UNS N07718 / AMS 5662)</h3>
+                <span class="badge-spec">HIGH-TEMPERATURE SUPERALLOY</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px;">
+                Precipitation-hardenable nickel-chromium superalloy offering exceptionally high yield, tensile, and creep-rupture properties up to 700 °C. Resistant to post-weld cracking.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">TENSILE STRENGTH</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">1,375 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">YIELD STRENGTH (0.2%)</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-steel); font-family: var(--font-mono);">1,100 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">MAX OPERATING TEMP</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: #10B981; font-family: var(--font-mono);">700 °C</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">DENSITY</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono);">8.19 g/cm³</div>
+                </div>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Typical Components:</strong> Gas turbine combustion chambers, rocket thrust nozzles, high-pressure subsea wellheads, and nuclear control rods.
+              </div>
+            </div>
+
+            <!-- AISI 4340 -->
+            <div id="alloy-4340" class="alloy-spec-panel">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="font-family: var(--font-grotesk); font-size: 1.4rem; color: var(--text-primary);">AISI 4340 / 30CrNiMo8 Chrome-Nickel-Moly Steel</h3>
+                <span class="badge-spec">HEAVY INDUSTRIAL POWER TRANSMISSION</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px;">
+                Deep-hardening heat-treatable alloy steel renowned for its unmatched toughness and ability to retain high fatigue strength in heavy cross-sections.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">TENSILE STRENGTH</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">1,150 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">YIELD STRENGTH (0.2%)</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-steel); font-family: var(--font-mono);">980 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">IMPACT CHARPY V (J)</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: #10B981; font-family: var(--font-mono);">&ge; 45 J</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">DENSITY</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono);">7.85 g/cm³</div>
+                </div>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Typical Components:</strong> Wind turbine main shafts, military vehicle transmission bevel gears, aircraft landing gear cylinders.
+              </div>
+            </div>
+
+            <!-- 17-4 PH -->
+            <div id="alloy-174ph" class="alloy-spec-panel">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="font-family: var(--font-grotesk); font-size: 1.4rem; color: var(--text-primary);">17-4 PH Stainless Steel (UNS S17400 / AISI 630)</h3>
+                <span class="badge-spec">HIGH-STRENGTH MARTENSITIC STAINLESS</span>
+              </div>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px;">
+                Combines high mechanical strength with the corrosion resistance of 304 austenitic stainless. Simple single-step aging heat treatment minimizes distortion.
+              </p>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">TENSILE STRENGTH</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-amber); font-family: var(--font-mono);">1,310 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">YIELD STRENGTH (0.2%)</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--accent-steel); font-family: var(--font-mono);">1,170 MPa</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">HARDNESS (HRC)</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: #10B981; font-family: var(--font-mono);">38 - 44 HRC</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 14px; border-radius: 6px;">
+                  <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">DENSITY</div>
+                  <div style="font-size: 1.4rem; font-weight: 700; color: var(--text-primary); font-family: var(--font-mono);">7.75 g/cm³</div>
+                </div>
+              </div>
+              <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Typical Components:</strong> Pump impellers, maritime propeller drive shafts, nuclear valve actuators, and chemical injection manifolds.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom RFQ Callout -->
+      <div class="card" style="text-align: center; padding: 48px; background: linear-gradient(135deg, rgba(18, 21, 26, 0.95) 0%, rgba(10, 12, 14, 0.98) 100%); border: 1px solid var(--border-amber);">
+        <span class="badge-spec" style="margin-bottom: 12px;">DIRECT METALLURGICAL INQUIRY</span>
+        <h2 style="font-family: var(--font-grotesk); font-size: 2rem; margin: 12px 0 16px; color: var(--text-primary);">Need Custom Ingot Forging or CAD Print Feasibility?</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 28px; font-size: 1rem;">
+          Our Senior Metallurgical Engineers review 3D STEP/IGES models within 24 hours to confirm grain-flow integrity, die tooling feasibility, and material certifications.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="request-quote.html" class="btn btn-amber" style="padding: 14px 28px;">Submit RFQ & 3D Model &rarr;</a>
+          <a href="contracts.html" class="btn btn-secondary" style="padding: 14px 28px;">View Supply Contracts</a>
+        </div>
+      </div>
+
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container" style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Demonstration.</div>
+  <!-- Modals for Technical Parameters -->
+  <div id="modal-forging-spec" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="forging-spec-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="forging-spec-title" class="modal-title">Heavy Forging Facility Specifications</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          ForgeCore operates three automated hydraulic press bays in Pune, Maharashtra:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Bay 1: 10,000-Ton Schloemann closed-die press with automatic manipulator arm.</li>
+          <li>&bull; Bay 2: 4,500-Ton open-die rail-bound forging press with 25-ton charging crane.</li>
+          <li>&bull; Bay 3: Radial-axial ring rolling mill capable of rolling seamless rings up to 4.2m OD.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Tooling Quotation</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-machining-spec" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="machining-spec-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="machining-spec-title" class="modal-title">5-Axis CNC Precision Envelope</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Our climate-controlled CNC clean room houses 14 multi-axis machine centers:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Maximum X/Y/Z stroke: 3,000 &times; 2,000 &times; 1,500 mm.</li>
+          <li>&bull; Zeiss Prismo CMM with tactile & optical laser scanning in 20.0 °C ±0.2 °C environment.</li>
+          <li>&bull; 100% full-dimension AS9102 First Article Inspection (FAI) reports included with every shipment.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Machining Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-heat-spec" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="heat-spec-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="heat-spec-title" class="modal-title">NADCAP Heat Treatment Compliance</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Certified under AMS 2750G Pyrometry specifications:
+        </p>
+        <ul style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7; margin-left: 20px; font-family: var(--font-mono);">
+          <li>&bull; Class 2 furnace uniformity (±5.5 °C) across all 6 vacuum and atmosphere chambers.</li>
+          <li>&bull; Real-time Eurotherm 3504 digital temperature logging with tamper-proof audit trails.</li>
+          <li>&bull; Microstructure grain-size ASTM E112 verification on every production melt heat.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="quality-certifications.html" class="btn btn-amber">View Certifications</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer with Full Sitemap Links -->
+  <footer class="site-footer" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 64px 0 32px; position: relative; z-index: 1;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 48px;">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark">FC</div>
+            <span class="brand-name">FORGECORE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Heavy engineering, closed-die forging, and 5-axis CNC machining for aerospace, defense, energy, and automotive OEMs.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Operations</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="capabilities.html" style="color: inherit; text-decoration: none;">Capabilities Matrix</a></li>
+            <li><a href="manufacturing.html" style="color: inherit; text-decoration: none;">Manufacturing Facility</a></li>
+            <li><a href="engineering.html" style="color: inherit; text-decoration: none;">CAD / FEA Engineering</a></li>
+            <li><a href="quality-certifications.html" style="color: inherit; text-decoration: none;">Quality & Certifications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Commercial</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="industries.html" style="color: inherit; text-decoration: none;">Sectors & Industries</a></li>
+            <li><a href="projects.html" style="color: inherit; text-decoration: none;">Featured Projects</a></li>
+            <li><a href="contracts.html" style="color: inherit; text-decoration: none;">Supply Contracts</a></li>
+            <li><a href="insights.html" style="color: inherit; text-decoration: none;">Metallurgy Whitepapers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Engagement</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="request-quote.html" style="color: inherit; text-decoration: none;">Request Formal RFQ</a></li>
+            <li><a href="contact.html" style="color: inherit; text-decoration: none;">Plant Visit & Contact</a></li>
+            <li><a href="sitemap.xml" style="color: inherit; text-decoration: none;">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 12px;">
+        <div>&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Client Platform.</div>
+        <div>Plant: Chakan Industrial Area, Pune &bull; Global Exports: Nhava Sheva Port</div>
+      </div>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
 </body>
 </html>

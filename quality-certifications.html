@@ -4,81 +4,355 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quality Assurance & Certifications — ForgeCore Industries</title>
-  <meta name="description" content="ISO 9001:2015, AS9100 Rev D, IATF 16949, and NABL Accredited metallurgical testing laboratory.">
+  <meta name="description" content="AS9100 Rev D, IATF 16949:2016, ISO 9001:2015, and NADCAP Heat Treatment certifications governing ForgeCore's aerospace and automotive production lines.">
+  <meta name="keywords" content="AS9100 Rev D certified, IATF 16949 automotive, NADCAP heat treating, EN 10204 3.1 inspection certificate, PPAP Level 3, Cpk 1.67">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Quality Assurance & Certifications — ForgeCore Industries">
+  <meta property="og:description" content="Certified zero-defect manufacturing with AS9100D, IATF 16949, NADCAP, and NABL accredited laboratories.">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "ForgeCore Quality Assurance and Certifications",
+    "description": "AS9100D, IATF 16949, and NADCAP quality management framework for heavy forging and CNC machining.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ForgeCore Industries"
+    }
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <!-- Ambient 3D Blueprint Canvas -->
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Industrial Top Bar -->
+  <div class="top-dispatch-bar" style="background: #0A0C0E; border-bottom: 1px solid var(--border-amber); padding: 8px 0; font-size: 0.8rem;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-amber); border-radius: 50%; box-shadow: 0 0 8px var(--accent-amber);"></span>
+        <span style="font-family: var(--font-mono); color: var(--accent-amber); font-weight: 600;">QUALITY LAB</span> &bull; Optical Emission Spectrometer Online &bull; EN 10204 3.1 Live Portal
+      </div>
+      <div>
+        <a href="contracts.html" style="color: #FFF; text-decoration: none; margin-right: 16px; font-weight: 600;">Supply Contracts &rarr;</a>
+        Quality Director: <a href="tel:+912069803200" style="color: var(--accent-amber); text-decoration: none; font-weight: 600;">+91 20 6980 3200</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link active">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul></nav>
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE</span>
+          <span class="brand-sub">Heavy Engineering &bull; Metallurgy</span>
+        </div>
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
+          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="quality-certifications.html" class="nav-link active">Quality</a></li>
+          <li><a href="contracts.html" class="nav-link">Contracts</a></li>
+          <li><a href="insights.html" class="nav-link">Insights</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
       <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
     </div>
   </header>
 
-  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px; position: relative; z-index: 1;">
     <div class="container">
-      <div style="max-width: 820px; margin-bottom: 64px;">
-        <span class="eyebrow">Zero Defect Manufacturing</span>
-        <h1>Certified Quality & Traceability Framework</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
+      
+      <!-- Hero Headline with Badge -->
+      <div style="max-width: 860px; margin-bottom: 48px;">
+        <span class="badge-spec" style="margin-bottom: 12px;">INTERNATIONAL ACCREDITATIONS</span>
+        <h1 style="font-family: var(--font-grotesk); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; color: var(--text-primary);">
+          Certified Quality & Unbroken Material Traceability.
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7; max-width: 740px;">
           Every ForgeCore component is backed by chemical spectrometer analysis, mechanical tensile and Charpy impact tests, ultrasonic non-destructive examination, and EN 10204 3.1 / 3.2 inspection certificates.
         </p>
       </div>
 
-      <div class="grid-3" style="margin-bottom: 64px;">
-        <div class="card">
-          <span class="spec-badge">CERTIFIED</span>
-          <h3>AS9100 Rev D</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Aviation, Space and Defense quality management certification guaranteeing strict supplier governance, foreign object debris (FOD) control, and full raw material traceability.
-          </p>
+      <!-- Live Quality KPI Ribbon -->
+      <div class="kpi-ribbon-container" style="margin-bottom: 64px;">
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="1.67" data-kpi-prefix="Cpk > " data-kpi-suffix="">Cpk > 0.00</div>
+          <div class="kpi-ribbon-label">Statistical Process Control Index</div>
         </div>
-
-        <div class="card">
-          <span class="spec-badge">CERTIFIED</span>
-          <h3>IATF 16949:2016</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            Automotive quality management standard governing rigorous PPAP Level 3 documentation, FMEA analysis, and statistical process control (SPC) with Cpk > 1.67.
-          </p>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="15" data-kpi-prefix="< " data-kpi-suffix=" PPM">< 0 PPM</div>
+          <div class="kpi-ribbon-label">Parts-Per-Million Automotive Defect Rate</div>
         </div>
-
-        <div class="card">
-          <span class="spec-badge">CERTIFIED</span>
-          <h3>ISO 9001:2015</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem;">
-            International standard for quality management systems audited annually by TUV SUD across our 120,000 sq ft manufacturing campus.
-          </p>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="100" data-kpi-suffix="%">0%</div>
+          <div class="kpi-ribbon-label">Heat Lot Chemical & Mechanical Traceability</div>
+        </div>
+        <div class="kpi-ribbon-item">
+          <div class="kpi-ribbon-value" data-kpi-target="4" data-kpi-suffix=" Audits">0 Audits</div>
+          <div class="kpi-ribbon-label">Global Aerospace & Defense Approvals</div>
         </div>
       </div>
 
-      <div class="card" style="padding: 40px;">
-        <h3>NABL-Accredited Metallurgical Testing Lab</h3>
-        <p style="color: var(--text-secondary); margin-bottom: 24px;">
-          Our in-house quality control center operates 24/7 with Zeiss Coordinate Measuring Machines (CMM), Optical Emission Spectrometers (OES), Charpy Impact Testers at -196°C, and Magwerks Magnetic Particle Inspection (MPI) benches.
+      <!-- Accreditation Cards (3D Tilt Cards with Verification Modals) -->
+      <div class="grid-3" style="margin-bottom: 80px;">
+        
+        <!-- Cert 01 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--accent-amber);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec">AEROSPACE & DEFENSE</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-amber);">ACTIVE REVISION D</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">AS9100 Rev D / ISO 9001</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Aviation, Space and Defense quality management certification guaranteeing strict supplier governance, foreign object debris (FOD) control, and complete raw material melt traceability.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+              Registrar: Bureau Veritas<br>
+              Cert ID: BV-IND-AS-84920<br>
+              Status: Verified Clean Audit
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-cert-as9100" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Certificate Details &rarr;
+          </button>
+        </div>
+
+        <!-- Cert 02 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid var(--accent-steel);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-certified">AUTOMOTIVE OEM</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-steel);">PPAP LEVEL 3</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">IATF 16949:2016</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Automotive quality management standard governing rigorous PPAP Level 3 documentation, FMEA defect analysis, and statistical process control (SPC) with Cpk > 1.67.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+              Registrar: TÜV SÜD<br>
+              Cert ID: TS-IATF-2026-993<br>
+              Coverage: Tier-1 EV & Transmission Lines
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-cert-iatf" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Certificate Details &rarr;
+          </button>
+        </div>
+
+        <!-- Cert 03 -->
+        <div class="card card-3d-tilt" style="display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10B981;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge-spec" style="color: #10B981; border-color: rgba(16,185,129,0.35); background: rgba(16,185,129,0.12);">SPECIAL PROCESS</span>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #10B981;">NADCAP ACCREDITED</span>
+            </div>
+            <h3 style="font-family: var(--font-grotesk); font-size: 1.35rem; margin-bottom: 12px; color: var(--text-primary);">NADCAP Heat Treating</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Global cooperative accreditation for special processes governed by the Performance Review Institute (PRI), validating vacuum annealing and cryogenic quenching.
+            </p>
+            <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: 6px; padding: 14px; margin-bottom: 20px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-secondary);">
+              Authority: PRI / NADCAP<br>
+              Scope: AMS 2750G / AMS 2759<br>
+              Furnaces: Class 2 Uniformity (±5.5 °C)
+            </div>
+          </div>
+          <button class="btn btn-secondary" data-open-modal="modal-cert-nadcap" style="width: 100%; font-size: 0.82rem; padding: 10px;">
+            Inspect Certificate Details &rarr;
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Laboratory Testing Capabilities Breakdown -->
+      <section style="margin-bottom: 80px;">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 36px;">
+          <span class="badge-spec" style="margin-bottom: 10px;">NABL ACCREDITED TESTING LABORATORY</span>
+          <h2 style="font-family: var(--font-grotesk); font-size: 1.8rem; margin-bottom: 10px; color: var(--text-primary);">In-House Destructive & Non-Destructive Testing</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">All testing is performed on-site with calibrated instrumentation under ISO/IEC 17025 standards.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+          <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 style="font-family: var(--font-grotesk); color: var(--text-primary); margin-bottom: 8px;">Optical Emission Spectrometry (OES)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+              Thermo Scientific ARL iSpark analyzer measuring 32 chemical elements down to 1 ppm, including nitrogen, oxygen, and carbon content in alloy steels.
+            </p>
+          </div>
+          <div class="card" style="border-top: 2px solid var(--accent-steel);">
+            <h4 style="font-family: var(--font-grotesk); color: var(--text-primary); margin-bottom: 8px;">Immersion Ultrasonic Testing (UT)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+              Automated multi-channel immersion ultrasonic scanning bath scanning for internal micro-porosity, non-metallic inclusions, and laminar voids to AMS 2631 standards.
+            </p>
+          </div>
+          <div class="card" style="border-top: 2px solid #10B981;">
+            <h4 style="font-family: var(--font-grotesk); color: var(--text-primary); margin-bottom: 8px;">Charpy Impact & Tensile Testing</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+              600 kN servo-hydraulic Universal Testing Machine (UTM) and Charpy impact testing down to cryogenic temperatures (-196 °C in liquid nitrogen).
+            </p>
+          </div>
+          <div class="card" style="border-top: 2px solid var(--accent-amber);">
+            <h4 style="font-family: var(--font-grotesk); color: var(--text-primary); margin-bottom: 8px;">Zeiss Prismo 3D CMM Metrology</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+              High-accuracy coordinate measuring machine operating in a 20.0 °C ±0.2 °C climate room, generating AS9102 inspection balloon drawings and color deviation heatmaps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom RFQ Callout -->
+      <div class="card" style="text-align: center; padding: 48px; background: linear-gradient(135deg, rgba(18, 21, 26, 0.95) 0%, rgba(10, 12, 14, 0.98) 100%); border: 1px solid var(--border-amber);">
+        <span class="badge-spec" style="margin-bottom: 12px;">QUALITY AUDIT INQUIRY</span>
+        <h2 style="font-family: var(--font-grotesk); font-size: 2rem; margin: 12px 0 16px; color: var(--text-primary);">Request Inspection Certificates or Audit Packet</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 28px; font-size: 1rem;">
+          Our Quality Assurance team can provide our complete vendor qualification questionnaire, ISO/AS9100 certificates, and sample EN 10204 3.1 dossiers.
         </p>
-        <a href="request-quote.html" class="btn btn-amber">Request Sample Inspection Report & MTC</a>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="request-quote.html" class="btn btn-amber" style="padding: 14px 28px;">Request Quality Packet &rarr;</a>
+          <a href="contact.html" class="btn btn-secondary" style="padding: 14px 28px;">Contact Quality Director</a>
+        </div>
       </div>
+
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-bottom">
-      <div>&copy; 2026 ForgeCore Industries Ltd. All rights reserved.</div>
-      <div style="color: var(--accent-amber);">ScaleNova EliteOS Demo Platform</div>
+  <!-- Interactive Certificate Modals -->
+  <div id="modal-cert-as9100" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="as9100-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="as9100-title" class="modal-title">AS9100 Rev D Certificate Verification</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Certified Scope: Precision closed-die and open-die forging, 5-axis CNC machining, and heat treatment of titanium, nickel superalloys, and alloy steels for aerospace and defense flight applications.
+        </p>
+        <div style="background: rgba(245,158,11,0.06); border-left: 3px solid var(--accent-amber); padding: 12px; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-amber);">
+          Auditing Body: Bureau Veritas Certification Holding SAS<br>
+          Accreditation ID: BV-IND-AS-84920<br>
+          Next Recertification Audit: October 2027
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Official PDF Copy</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-cert-iatf" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="iatf-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="iatf-title" class="modal-title">IATF 16949:2016 Certificate Verification</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Certified Scope: Manufacture of forged and machined automotive transmission gears, pinion shafts, and wheel hub assemblies.
+        </p>
+        <div style="background: rgba(56,189,248,0.06); border-left: 3px solid var(--accent-steel); padding: 12px; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent-steel);">
+          Auditing Body: TÜV SÜD Management Service GmbH<br>
+          IATF Certificate No: 0492810<br>
+          Current Defect Rate: 12.4 PPM across 1.2M delivered units
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Official PDF Copy</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-cert-nadcap" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="nadcap-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="nadcap-title" class="modal-title">NADCAP Heat Treatment Certificate Verification</h3>
+        <button class="modal-close" data-close-modal aria-label="Close Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Accredited by the Performance Review Institute (PRI) for AC7102 Heat Treating and AC7102/8 Pyrometry compliance under AMS 2750G standards.
+        </p>
+        <div style="background: rgba(16,185,129,0.06); border-left: 3px solid #10B981; padding: 12px; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.85rem; color: #10B981;">
+          PRI NADCAP Accreditation No: 20491820<br>
+          Scope: Titanium Alloy Aging, Nickel Superalloy Solutionizing & Aging, Vacuum Heat Treatment<br>
+          Audit Merit Status: 24-Month Extended Audit Interval Granted
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-close-modal>Close</button>
+        <a href="request-quote.html" class="btn btn-amber">Request Official PDF Copy</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer with Full Sitemap Links -->
+  <footer class="site-footer" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); padding: 64px 0 32px; position: relative; z-index: 1;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 48px;">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-mark">FC</div>
+            <span class="brand-name">FORGECORE</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            Heavy engineering, closed-die forging, and 5-axis CNC machining for aerospace, defense, energy, and automotive OEMs.
+          </p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Operations</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="capabilities.html" style="color: inherit; text-decoration: none;">Capabilities Matrix</a></li>
+            <li><a href="manufacturing.html" style="color: inherit; text-decoration: none;">Manufacturing Facility</a></li>
+            <li><a href="engineering.html" style="color: inherit; text-decoration: none;">CAD / FEA Engineering</a></li>
+            <li><a href="quality-certifications.html" style="color: inherit; text-decoration: none;">Quality & Certifications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Commercial</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="industries.html" style="color: inherit; text-decoration: none;">Sectors & Industries</a></li>
+            <li><a href="projects.html" style="color: inherit; text-decoration: none;">Featured Projects</a></li>
+            <li><a href="contracts.html" style="color: inherit; text-decoration: none;">Supply Contracts</a></li>
+            <li><a href="insights.html" style="color: inherit; text-decoration: none;">Metallurgy Whitepapers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 16px; font-family: var(--font-grotesk);">Engagement</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-secondary);">
+            <li><a href="request-quote.html" style="color: inherit; text-decoration: none;">Request Formal RFQ</a></li>
+            <li><a href="contact.html" style="color: inherit; text-decoration: none;">Plant Visit & Contact</a></li>
+            <li><a href="sitemap.xml" style="color: inherit; text-decoration: none;">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top: 1px solid var(--border-subtle); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; gap: 12px;">
+        <div>&copy; 2026 ForgeCore Industries. ScaleNova Systems EliteOS Client Platform.</div>
+        <div>Plant: Chakan Industrial Area, Pune &bull; Global Exports: Nhava Sheva Port</div>
+      </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="src/components/blueprint-canvas.js"></script>
+  <script src="src/components/modal-controller.js"></script>
+  <script src="src/components/visual-infographics.js"></script>
 </body>
 </html>
