@@ -12,21 +12,56 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      <nav><ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="capabilities.html" class="nav-link">Capabilities</a></li>
-        <li><a href="manufacturing.html" class="nav-link">Manufacturing</a></li>
-        <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-        <li><a href="industries.html" class="nav-link active">Industries</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="quality-certifications.html" class="nav-link">Quality</a></li>
-        <li><a href="insights.html" class="nav-link">Insights</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul></nav>
-      <a href="request-quote.html" class="btn btn-amber" style="padding: 10px 18px; font-size: 0.82rem;">Request RFQ</a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
+          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Quality & ISO</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.82rem; white-space: nowrap;">Request RFQ</a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="toggleForgecoreSidePanel()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </header>
+
+  <!-- Slide-Out Mobile App-Like Drawer -->
+  <div class="side-panel-overlay" id="forgecoreSideOverlay" onclick="toggleForgecoreSidePanel()"></div>
+  <aside class="side-panel-drawer" id="forgecoreSideDrawer" aria-label="Mobile Navigation">
+    <div class="side-panel-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="brand-mark" style="width: 32px; height: 32px; font-size: 0.9rem;">FC</div>
+        <span class="brand-name" style="font-size: 1.1rem;">FORGECORE</span>
+      </div>
+      <button class="side-panel-close" aria-label="Close menu" onclick="toggleForgecoreSidePanel()">&times;</button>
+    </div>
+    <ul class="side-panel-nav">
+      <li><a href="index.html">Home <span>&rarr;</span></a></li>
+      <li><a href="manufacturing.html">Capabilities (Forging & CNC) <span>&rarr;</span></a></li>
+      <li><a href="capabilities.html">Machining Cells <span>&rarr;</span></a></li>
+      <li><a href="engineering.html">Metallurgy & Superalloys <span>&rarr;</span></a></li>
+      <li><a href="industries.html">Defense & Aero Sectors <span>&rarr;</span></a></li>
+      <li><a href="projects.html">Track Record & Case Studies <span>&rarr;</span></a></li>
+      <li><a href="quality-certifications.html">AS9100D & NADCAP Quality <span>&rarr;</span></a></li>
+      <li><a href="contracts.html">Contract Supply Tiers <span>&rarr;</span></a></li>
+      <li><a href="insights.html">Technical Papers <span>&rarr;</span></a></li>
+      <li><a href="about.html">Foundry History & Plant Works <span>&rarr;</span></a></li>
+      <li><a href="contact.html">Plant Visits & Despatches <span>&rarr;</span></a></li>
+      <li><a href="request-quote.html">Submit RFQ / Spec Drawing <span>&rarr;</span></a></li>
+      <li><a href="sitemap.xml">XML Index <span>&rarr;</span></a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">
+      <div>PLANT DISPATCH: +91 20 6790 4000</div>
+      <div style="margin-top: 4px;">PUNE MIDC &bull; AEROSPACE PRECISION</div>
+    </div>
+  </aside>
 
   <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
     <div class="container">
@@ -84,5 +119,24 @@
       <div style="color: var(--accent-amber);">ScaleNova EliteOS Demo Platform</div>
     </div>
   </footer>
+
+  <script>
+    function toggleForgecoreSidePanel() {
+      const drawer = document.getElementById("forgecoreSideDrawer");
+      const overlay = document.getElementById("forgecoreSideOverlay");
+      if (drawer && overlay) {
+        const isOpen = drawer.classList.contains("active");
+        if (isOpen) {
+          drawer.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.classList.remove("side-panel-open");
+        } else {
+          drawer.classList.add("active");
+          overlay.classList.add("active");
+          document.body.classList.add("side-panel-open");
+        }
+      }
+    }
+  </script>
 </body>
 </html>

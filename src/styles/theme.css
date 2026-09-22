@@ -163,6 +163,8 @@ p.lead {
   gap: 12px;
   text-decoration: none;
   color: var(--text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-mark {
@@ -211,6 +213,7 @@ p.lead {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -223,7 +226,7 @@ p.lead {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 12px 24px;
   font-family: var(--font-grotesk);
   font-size: 0.88rem;
   font-weight: 700;
@@ -233,6 +236,8 @@ p.lead {
   cursor: pointer;
   border-radius: 0;
   transition: var(--transition);
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .btn-primary {
@@ -515,9 +520,18 @@ p.lead {
   border: none;
   color: #FFFFFF;
   cursor: pointer;
+  padding: 8px;
 }
 
 @media (max-width: 1024px) {
+  .nav-menu {
+    display: none !important;
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
   .hero-grid {
     grid-template-columns: 1fr;
   }
@@ -526,6 +540,7 @@ p.lead {
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 }
 
@@ -536,25 +551,13 @@ p.lead {
   .cap-matrix {
     grid-template-columns: 1fr;
   }
-  .mobile-nav-toggle {
-    display: block;
-  }
-  .nav-menu {
-    display: none;
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    right: 0;
-    background: var(--bg-primary);
-    flex-direction: column;
-    padding: 24px;
-    border-bottom: 1px solid var(--border-medium);
-  }
-  .nav-menu.open {
-    display: flex;
-  }
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 
@@ -874,14 +877,14 @@ body.side-panel-open {
 
 /* Ambient Blueprint Canvas */
 .ambient-3d-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.45;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  opacity: 0.70 !important;
 }
 
 /* KPI Stat Ribbon (Heavy Metallurgy & Precision Metrics) */
