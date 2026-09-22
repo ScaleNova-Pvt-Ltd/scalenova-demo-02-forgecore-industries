@@ -1252,3 +1252,12 @@ body.side-panel-open {
     text-align: center;
   }
 }
+
+.brand-logo {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+.site-header .btn-primary {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
