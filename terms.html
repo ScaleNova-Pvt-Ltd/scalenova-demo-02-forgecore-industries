@@ -3,107 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Insights & Whitepapers — ForgeCore Industries</title>
-  <meta name="description" content="Technical papers on metallurgy, high-temperature creep resistance, and grain flow alignment in critical mechanical assemblies.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230C0D0F'/><path d='M6 6H26V10H6V6ZM6 14H20V18H6V14ZM6 22H15V26H6V22Z' fill='%23F59E0B'/></svg>">
+  <title>Terms & Client Mandate Conditions — ForgeCore Industries</title>
+  <meta name="description" content="Institutional client mandate terms, engagement conditions, intellectual property rights, and governance framework for ForgeCore Industries.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23070D18'/><text x='16' y='22' font-family='serif' font-size='18' font-weight='bold' fill='%23F59E0B' text-anchor='middle'>FC</text></svg>">
   <link rel="stylesheet" href="src/styles/theme.css">
 </head>
 <body>
+  <canvas id="blueprint-canvas" class="ambient-3d-canvas" aria-hidden="true"></canvas>
+
+  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo"><div class="brand-mark">FC</div><span class="brand-name">FORGECORE</span></a>
-      
+      <a href="index.html" class="brand-logo" aria-label="ForgeCore Industries Home">
+        <div class="brand-mark">FC</div>
+        <div>
+          <span class="brand-name">FORGECORE INDUSTRIES</span>
+          <span class="brand-sub">Client Mandate & Terms</span>
+        </div>
+      </a>
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="manufacturing.html" class="nav-link">Capabilities</a></li>
-          <li><a href="engineering.html" class="nav-link">Engineering</a></li>
-          <li><a href="quality-certifications.html" class="nav-link">Quality & ISO</a></li>
+          <li><a href="index.html" class="nav-link">Overview</a></li>
+          <li><a href="manufacturing.html" class="nav-link">Practices</a></li>
+          <li><a href="quality-certifications.html" class="nav-link">Case Studies</a></li>
+          <li><a href="projects.html" class="nav-link">About</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
-
       <div style="display: flex; align-items: center; gap: 14px;">
-        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.82rem; white-space: nowrap;">Request RFQ</a>
-        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation" onclick="toggleForgecoreSidePanel()">
+        <a href="request-quote.html" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.82rem; white-space: nowrap;">Request RFQ</a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open mobile menu" onclick="toggleForgecoreSidePanel()">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Slide-Out Mobile App-Like Drawer -->
+  <!-- Side-Out Mobile Drawer -->
   <div class="side-panel-overlay" id="forgecoreSideOverlay" onclick="toggleForgecoreSidePanel()"></div>
   <aside class="side-panel-drawer" id="forgecoreSideDrawer" aria-label="Mobile Navigation">
     <div class="side-panel-header">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <div class="brand-mark" style="width: 32px; height: 32px; font-size: 0.9rem;">FC</div>
-        <span class="brand-name" style="font-size: 1.1rem;">FORGECORE</span>
+        <div class="brand-mark" style="width: 32px; height: 32px; font-size: 1rem;">FC</div>
+        <span class="brand-name" style="font-size: 1.1rem;">FORGECORE INDUSTRIES</span>
       </div>
       <button class="side-panel-close" aria-label="Close menu" onclick="toggleForgecoreSidePanel()">&times;</button>
     </div>
     <ul class="side-panel-nav">
       <li><a href="index.html">Home <span>&rarr;</span></a></li>
-      <li><a href="manufacturing.html">Capabilities (Forging & CNC) <span>&rarr;</span></a></li>
-      <li><a href="capabilities.html">Machining Cells <span>&rarr;</span></a></li>
-      <li><a href="engineering.html">Metallurgy & Superalloys <span>&rarr;</span></a></li>
-      <li><a href="industries.html">Defense & Aero Sectors <span>&rarr;</span></a></li>
-      <li><a href="projects.html">Track Record & Case Studies <span>&rarr;</span></a></li>
+      <li><a href="manufacturing.html">Heavy Forging & CNC <span>&rarr;</span></a></li>
+      <li><a href="capabilities.html">5-Axis Machining Cells <span>&rarr;</span></a></li>
       <li><a href="quality-certifications.html">AS9100D & NADCAP Quality <span>&rarr;</span></a></li>
-      <li><a href="contracts.html">Contract Supply Tiers <span>&rarr;</span></a></li>
-      <li><a href="insights.html">Technical Papers <span>&rarr;</span></a></li>
-      <li><a href="about.html">Foundry History & Plant Works <span>&rarr;</span></a></li>
-      <li><a href="contact.html">Plant Visits & Despatches <span>&rarr;</span></a></li>
-      <li><a href="request-quote.html">Submit RFQ / Spec Drawing <span>&rarr;</span></a></li>
+      <li><a href="projects.html">Track Record & Case Studies <span>&rarr;</span></a></li>
+      <li><a href="privacy.html">Privacy Charter <span>&rarr;</span></a></li>
+      <li><a href="terms.html">Terms of Engagement <span>&rarr;</span></a></li>
+      <li><a href="contact.html">Offices & Contacts <span>&rarr;</span></a></li>
       <li><a href="sitemap.xml">XML Index <span>&rarr;</span></a></li>
     </ul>
-    <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">
-      <div>PLANT DISPATCH: +91 20 6790 4000</div>
-      <div style="margin-top: 4px;">PUNE MIDC &bull; AEROSPACE PRECISION</div>
-    </div>
   </aside>
 
-  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px;">
-    <div class="container">
-      <div style="max-width: 820px; margin-bottom: 64px;">
-        <span class="eyebrow">Metallurgical Research & Technical Analysis</span>
-        <h1>Engineering Publications</h1>
-        <p style="font-size: 1.15rem; color: #D1D5DB; line-height: 1.7;">
-          Applied metallurgical insights, comparative fatigue evaluations, and process optimizations written by the ForgeCore senior engineering staff.
-        </p>
+  <main style="padding-top: calc(var(--header-height) + 48px); padding-bottom: 96px; position: relative; z-index: 1;">
+    <div class="container" style="max-width: 900px;">
+      <!-- Breadcrumb -->
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: #94A3B8; margin-bottom: 24px;">
+        <a href="index.html" style="color: inherit; text-decoration: none;">Home</a>
+        <span>&bull;</span>
+        <span>Institutional Governance</span>
+        <span>&bull;</span>
+        <span style="color: #F59E0B;">Terms of Service</span>
       </div>
 
-      <div class="grid-3" style="margin-bottom: 64px;">
-        <div class="card">
-          <span class="spec-badge">WHITEPAPER</span>
-          <h3>Comparative Fatigue Life: Forged vs. Cast Components</h3>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">
-            A quantitative analysis of high-cycle axial fatigue behavior in 4140 low-alloy steels under alternating tension-compression loads.
-          </p>
-          <a href="request-quote.html" style="color: var(--accent-amber); font-size: 0.85rem; text-decoration: none; font-weight: 600;">Download Paper (PDF) &rarr;</a>
-        </div>
+      <span class="eyebrow" style="color: #F59E0B; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;">STATUTORY & MANDATE CHARTER</span>
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.15; margin: 12px 0 20px;">Institutional Client Mandate & Terms of Engagement</h1>
+      <p class="lead" style="font-size: 1.15rem; line-height: 1.7; color: #64748B; margin-bottom: 40px;">
+        These Master Engagement Terms govern all advisory contracts, technical deliveries, and corporate representations between ForgeCore Industries and contracting entities.
+      </p>
 
-        <div class="card">
-          <span class="spec-badge">DESIGN GUIDE</span>
-          <h3>Optimizing Draft Angles in Near-Net Precision Dies</h3>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">
-            How minor changes to corner radii and draft angles can reduce flash volume by up to 22% while extending die cavity lifespan.
-          </p>
-          <a href="request-quote.html" style="color: var(--accent-amber); font-size: 0.85rem; text-decoration: none; font-weight: 600;">Download Paper (PDF) &rarr;</a>
+      <!-- Key Stat Summary Strip -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; padding: 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; margin-bottom: 48px;">
+        <div>
+          <div style="font-size: 1.3rem; font-weight: 700; color: #F59E0B;">Strict NDA</div>
+          <div style="font-size: 0.78rem; color: #94A3B8;">Mutual Non-Disclosure Required</div>
         </div>
+        <div>
+          <div style="font-size: 1.3rem; font-weight: 700; color: #F59E0B;">100% Retained</div>
+          <div style="font-size: 0.78rem; color: #94A3B8;">Client IP Exclusivity Standard</div>
+        </div>
+        <div>
+          <div style="font-size: 1.3rem; font-weight: 700; color: #F59E0B;">Pune</div>
+          <div style="font-size: 0.78rem; color: #94A3B8;">Primary Legal Seat & Forum</div>
+        </div>
+      </div>
 
-        <div class="card">
-          <span class="spec-badge">CASE STUDY</span>
-          <h3>Cryogenic Quenching in Duplex Stainless Steels</h3>
-          <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px;">
-            Achieving balanced 50/50 austenite-ferrite phase distribution in UNS S31803 without sigma-phase precipitation.
-          </p>
-          <a href="request-quote.html" style="color: var(--accent-amber); font-size: 0.85rem; text-decoration: none; font-weight: 600;">Download Paper (PDF) &rarr;</a>
-        </div>
+      <!-- Formal Articles -->
+      <article style="font-size: 0.95rem; line-height: 1.85; color: #475569;">
+        <h3 style="color: #0F172A; margin: 32px 0 12px; font-size: 1.25rem;">1. Engagement Scope & Letter of Mandate</h3>
+        <p>
+          All deliverables, strategic advisory retainers, and technical specifications are formally governed by an executed Letter of Mandate (LoM) or Master Services Agreement (MSA). Proposals and discovery representations shall not constitute a binding operational covenant until formal signing by an authorized officer of ForgeCore Industries.
+        </p>
+
+        <h3 style="color: #0F172A; margin: 32px 0 12px; font-size: 1.25rem;">2. Intellectual Property & Deliverable Ownership</h3>
+        <p>
+          Upon receipt of full contract settlement, all bespoke codebases, structural drawings, proprietary analyses, and domain assets authored exclusively for the client shall vest irrevocably with the contracting client entity. Pre-existing frameworks, proprietary mathematical engines, and ScaleNova multi-tenant operational primitives remain the exclusive property of ScaleNova Systems.
+        </p>
+
+        <h3 style="color: #0F172A; margin: 32px 0 12px; font-size: 1.25rem;">3. Confidentiality & Non-Disclosure Governance</h3>
+        <p>
+          Both parties agree to hold in strict institutional confidence all proprietary operational parameters, pricing sheets, trade secrets, and technological designs. Mutual non-disclosure obligations shall endure for a period of five (5) years following the completion of engagements.
+        </p>
+
+        <h3 style="color: #0F172A; margin: 32px 0 12px; font-size: 1.25rem;">4. Warranties & Limitation of Liability</h3>
+        <p>
+          Deliverables are rendered in accordance with Tier-1 industry standards. Neither party shall be liable for indirect, incidental, punitive, or consequential commercial damages, including lost revenue or business interruption, exceeding the total contract fees remitted under the applicable statement of work in the preceding twelve-month period.
+        </p>
+
+        <h3 style="color: #0F172A; margin: 32px 0 12px; font-size: 1.25rem;">5. Dispute Resolution & Governing Law</h3>
+        <p>
+          These Terms and any dispute arising hereunder shall be construed and governed in accordance with the laws of the Republic of India. Any controversy shall be submitted to binding arbitration in Pune, Maharashtra, administered under the Indian Contract Act & Industrial Disputes Code by a single arbitrator appointed mutually.
+        </p>
+
+        <h3 style="color: #0F172A; margin: 32px 0 12px; font-size: 1.25rem;">6. Digital Inquiry Portals & ScaleNova Security Verification</h3>
+        <p>
+          Inquiries dispatched via our web application gateway are authenticated via secure tokenized protocols. No database credentials or internal enterprise secrets are exposed in browser code. All transmissions comply with TLS 1.3 encryption.
+        </p>
+      </article>
+
+      <!-- Bottom Contact Callout -->
+      <div style="margin-top: 48px; padding: 24px; background: rgba(0,0,0,0.02); border-left: 3px solid #F59E0B;">
+        <div style="font-weight: 700; color: #0F172A; margin-bottom: 6px;">Questions Regarding Client Terms?</div>
+        <div style="font-size: 0.9rem; color: #64748B;">Reach our legal compliance team at <a href="mailto:rfq@forgecore.example.com" style="color: #F59E0B; font-weight: 600;">rfq@forgecore.example.com</a> or telephone <a href="tel:+912067904000" style="color: #0F172A; font-weight: 600;">+91 20 6790 4000</a>.</div>
       </div>
     </div>
   </main>
 
+  
+  <!-- Standardized Premium Enterprise Footer -->
   <!-- Standardized Premium Enterprise Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -182,6 +216,8 @@
       </div>
     </div>
   </footer>
+  
+  
 
   <script>
     function toggleForgecoreSidePanel() {
