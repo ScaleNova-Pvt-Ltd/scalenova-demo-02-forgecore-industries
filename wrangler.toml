@@ -12,3 +12,4 @@ DEMO_ID = "DEMO-02"
 CLIENT_NAME = "ForgeCore Industries"
 INDUSTRY = "Manufacturing & Industrial SMEs"
 PRIMARY_DOMAIN = "demo2.scalenovasys.com"
+workers_dev = true

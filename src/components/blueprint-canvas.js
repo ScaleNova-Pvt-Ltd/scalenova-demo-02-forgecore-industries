@@ -1,5 +1,5 @@
 /**
- * Industrial 3D Blueprint / Component Schematic Canvas Engine
+ * Industrial 3D Blueprint / Component Schematic Canvas Engine (Retina Calibrated)
  * Demo 02: ForgeCore Industries (src/components/blueprint-canvas.js)
  * High-precision 60fps rotating isometric CAD cylinder with live datum marks & annotations.
  */
@@ -17,12 +17,28 @@
     }
 
     const ctx = canvas.getContext('2d');
-    let width, height, angle = 0;
+    let width = 0, height = 0, dpr = 1;
+    let angle = 0;
+    let animId = null;
+    let isVisible = true;
 
     function resize() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.scale(dpr, dpr);
     }
+
+    document.addEventListener('visibilitychange', function () {
+      isVisible = !document.hidden;
+      if (isVisible && !animId) {
+        animate();
+      }
+    });
 
     function drawWireframeCylinder(cx, cy, r, h, rot) {
       ctx.save();
@@ -41,39 +57,29 @@
         botPoints.push({ x: x, y: y + h / 2 });
       }
 
-      // Outer Glow
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = 'rgba(245, 158, 11, 0.4)';
-
-      // Draw Top Ring
-      ctx.strokeStyle = 'rgba(245, 158, 11, 0.85)';
-      ctx.lineWidth = 1.6;
-      ctx.beginPath();
-      for (let i = 0; i < segments; i++) {
-        const p = topPoints[i];
-        if (i === 0) ctx.moveTo(p.x, p.y);
-        else ctx.lineTo(p.x, p.y);
-      }
-      ctx.closePath();
-      ctx.stroke();
-
-      // Draw Bottom Ring
-      ctx.strokeStyle = 'rgba(245, 158, 11, 0.70)';
-      ctx.lineWidth = 1.4;
-      ctx.beginPath();
-      for (let i = 0; i < segments; i++) {
-        const p = botPoints[i];
-        if (i === 0) ctx.moveTo(p.x, p.y);
-        else ctx.lineTo(p.x, p.y);
-      }
-      ctx.closePath();
-      ctx.stroke();
-
-      // Vertical Ribs & Tooling Lines
-      ctx.shadowBlur = 4;
-      ctx.shadowColor = 'rgba(56, 189, 248, 0.3)';
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.55)';
+      // Draw top ellipse rim
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.45)';
       ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      for (let i = 0; i < segments; i++) {
+        if (i === 0) ctx.moveTo(topPoints[i].x, topPoints[i].y);
+        else ctx.lineTo(topPoints[i].x, topPoints[i].y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+
+      // Draw bottom ellipse rim
+      ctx.beginPath();
+      for (let i = 0; i < segments; i++) {
+        if (i === 0) ctx.moveTo(botPoints[i].x, botPoints[i].y);
+        else ctx.lineTo(botPoints[i].x, botPoints[i].y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+
+      // Draw vertical ribs
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+      ctx.lineWidth = 0.8;
       for (let i = 0; i < segments; i += 2) {
         ctx.beginPath();
         ctx.moveTo(topPoints[i].x, topPoints[i].y);
@@ -81,37 +87,44 @@
         ctx.stroke();
       }
 
-      // Center Datum Axis Marker
-      ctx.shadowBlur = 0;
-      ctx.fillStyle = '#F59E0B';
-      ctx.fillRect(-3, -3, 6, 6);
+      // Draw CAD engineering datum centerlines
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.20)';
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(-r * 1.35, 0);
+      ctx.lineTo(r * 1.35, 0);
+      ctx.moveTo(0, -h * 0.75);
+      ctx.lineTo(0, h * 0.75);
+      ctx.stroke();
+      ctx.setLineDash([]);
 
-      // Dimension Callouts
-      ctx.font = '11px "JetBrains Mono", Consolas, monospace';
-      ctx.fillStyle = 'rgba(245, 158, 11, 0.9)';
-      ctx.fillText(`Ø ${(r * 2).toFixed(1)} mm [±0.005]`, r + 14, 0);
-      ctx.fillStyle = 'rgba(56, 189, 248, 0.85)';
-      ctx.fillText(`ROT: ${(rot * 180 / Math.PI % 360).toFixed(0)}°`, -r - 70, -h / 2);
+      // Datum callouts
+      ctx.fillStyle = 'rgba(245, 158, 11, 0.65)';
+      ctx.font = '9px "JetBrains Mono", monospace';
+      ctx.fillText('DAT-A: Ø' + (r * 2).toFixed(1) + 'mm [±0.005]', -r - 10, -h / 2 - 8);
+      ctx.fillText('AS9100D CAD-SPEC', r - 20, h / 2 + 16);
 
       ctx.restore();
     }
 
     function animate() {
+      if (!isVisible) {
+        animId = null;
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
-      angle += 0.008;
       const isMobile = width < 768;
-      const cx = isMobile ? width * 0.5 : width * 0.76;
-      const cy = isMobile ? Math.min(height * 0.36, 260) : Math.min(height * 0.44, 380);
-      const radius = isMobile ? Math.min(width * 0.22, 90) : Math.min(width * 0.14, 120);
-      const heightVal = radius * 1.35;
+      const cx = isMobile ? width * 0.85 : width * 0.75;
+      const cy = height * 0.45;
+      const r = isMobile ? 80 : 130;
+      const h = isMobile ? 120 : 180;
 
-      // Outer primary industrial assembly
-      drawWireframeCylinder(cx, cy, radius, heightVal, angle);
-      // Inner coaxial concentric core
-      drawWireframeCylinder(cx, cy, radius * 0.55, heightVal * 1.15, -angle * 1.4);
+      drawWireframeCylinder(cx, cy, r, h, angle);
+      angle += 0.005;
 
-      requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
     }
 
     window.addEventListener('resize', resize, { passive: true });
