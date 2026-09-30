@@ -58,7 +58,7 @@
       }
 
       // Draw top ellipse rim
-      ctx.strokeStyle = 'rgba(245, 158, 11, 0.45)';
+      ctx.strokeStyle = 'rgba(217, 119, 6, 0.55)';
       ctx.lineWidth = 1.2;
       ctx.beginPath();
       for (let i = 0; i < segments; i++) {
@@ -78,7 +78,7 @@
       ctx.stroke();
 
       // Draw vertical ribs
-      ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+      ctx.strokeStyle = 'rgba(15, 23, 42, 0.18)';
       ctx.lineWidth = 0.8;
       for (let i = 0; i < segments; i += 2) {
         ctx.beginPath();
@@ -88,7 +88,7 @@
       }
 
       // Draw CAD engineering datum centerlines
-      ctx.strokeStyle = 'rgba(245, 158, 11, 0.20)';
+      ctx.strokeStyle = 'rgba(217, 119, 6, 0.30)';
       ctx.setLineDash([4, 4]);
       ctx.beginPath();
       ctx.moveTo(-r * 1.35, 0);
@@ -99,7 +99,7 @@
       ctx.setLineDash([]);
 
       // Datum callouts
-      ctx.fillStyle = 'rgba(245, 158, 11, 0.65)';
+      ctx.fillStyle = 'rgba(180, 83, 9, 0.85)';
       ctx.font = '9px "JetBrains Mono", monospace';
       ctx.fillText('DAT-A: Ø' + (r * 2).toFixed(1) + 'mm [±0.005]', -r - 10, -h / 2 - 8);
       ctx.fillText('AS9100D CAD-SPEC', r - 20, h / 2 + 16);

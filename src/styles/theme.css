@@ -8,16 +8,16 @@
 
 :root {
   /* Industrial Palette: Heavy Graphite, Matte Carbon, Machined Steel, Safety Amber */
-  --bg-primary: #0A0C0E;
-  --bg-secondary: #12151A;
-  --bg-surface: #181C24;
-  --bg-surface-hover: #202530;
-  --bg-plate: #0F1217;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #F1F5F9;
+  --bg-plate: #F8FAFC;
 
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-inverted: #0A0C0E;
+  --text-primary: #0A0C0E;
+  --text-secondary: #334155;
+  --text-muted: #475569;
+  --text-inverted: #FFFFFF;
 
   --accent-amber: #F59E0B;
   --accent-amber-glow: rgba(245, 158, 11, 0.25);
@@ -68,8 +68,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
   z-index: 0;
@@ -1656,7 +1656,7 @@ body.side-panel-open {
 }
 
 /* 5. Mobile Compact Header [Logo] [☰] */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .site-header {
     height: auto !important;
     min-height: 64px !important;
@@ -1665,9 +1665,15 @@ body.side-panel-open {
   .header-inner {
     padding-left: 16px !important;
     padding-right: 16px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
     gap: 12px !important;
   }
-  .header-inner .btn {
+  .header-inner .btn,
+  .site-header .btn,
+  .site-header .btn-primary {
     display: none !important; /* Hide header CTA on mobile for clean app header */
   }
   .brand-sub {
@@ -1676,6 +1682,17 @@ body.side-panel-open {
   .brand-name {
     font-size: 1.05rem !important;
     letter-spacing: -0.01em !important;
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    flex-shrink: 0 !important;
+    color: #0A0C0E !important;
+  }
+  .mobile-nav-toggle svg {
+    stroke: #0A0C0E !important;
   }
 }
 
@@ -1767,4 +1784,273 @@ body.side-panel-open {
 }
 table {
   max-width: 100% !important;
+}
+
+/* =========================================================================
+ * HIGH-CONTRAST ACCESSIBILITY & TEXT VISIBILITY RULES (ZERO WASHED-OUT TEXT)
+ * ========================================================================= */
+
+body {
+  background-color: #FFFFFF !important;
+  color: #334155 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #0A0C0E !important;
+}
+
+p, .lead {
+  color: #334155 !important;
+}
+
+.brand-name {
+  color: #0A0C0E !important;
+}
+
+.brand-sub {
+  color: #64748B !important;
+}
+
+.nav-link {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #D97706 !important;
+}
+
+.mono-tag {
+  color: #92400E !important;
+  background: #FEF3C7 !important;
+  border: 1px solid #FCD34D !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+}
+
+.mobile-nav-toggle {
+  color: #0A0C0E !important;
+}
+
+.mobile-nav-toggle svg {
+  stroke: #0A0C0E !important;
+}
+
+/* Hero Section */
+.hero-industrial {
+  background: #FFFFFF !important;
+  padding-top: calc(var(--header-height, 84px) + 40px) !important;
+}
+
+.hero-industrial h1 {
+  color: #0A0C0E !important;
+}
+
+.hero-industrial .lead {
+  color: #334155 !important;
+}
+
+@media (max-width: 768px) {
+  .hero-industrial {
+    padding-top: calc(var(--header-height, 84px) + 48px) !important;
+    padding-bottom: 48px !important;
+  }
+  .mono-tag {
+    margin-bottom: 12px !important;
+    display: inline-block !important;
+  }
+}
+
+/* Keep Spec Strip Dark Industrial for Striking Contrast */
+.spec-strip {
+  background: #0A0C0E !important;
+  border-top: 1px solid #1E293B !important;
+  border-bottom: 1px solid #1E293B !important;
+}
+
+.spec-val {
+  color: #FFFFFF !important;
+}
+
+.spec-val span {
+  color: #F59E0B !important;
+}
+
+.spec-label {
+  color: #94A3B8 !important;
+}
+
+/* Industrial Cards */
+.cap-card, .material-card, .process-step, .tech-card, .cert-card, .bento-card, .card {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+.cap-card h3, .material-card h3, .process-step h3, .tech-card h3, .cert-card h3 {
+  color: #0A0C0E !important;
+}
+
+.cap-card p, .material-card p, .process-step p, .tech-card p, .cert-card p {
+  color: #475569 !important;
+}
+
+.cap-num {
+  color: #D97706 !important;
+  font-weight: 700 !important;
+}
+
+/* Tables */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+th {
+  background: #F8FAFC !important;
+  color: #0A0C0E !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #CBD5E1 !important;
+  padding: 14px 16px !important;
+}
+
+td {
+  color: #1E293B !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  padding: 14px 16px !important;
+}
+
+td strong, td span {
+  color: #0A0C0E !important;
+}
+
+/* Secondary Button Contrast */
+.btn-secondary {
+  background: #FFFFFF !important;
+  color: #0A0C0E !important;
+  border: 1px solid #CBD5E1 !important;
+}
+
+.btn-secondary:hover {
+  background: #FEF3C7 !important;
+  color: #92400E !important;
+  border-color: #D97706 !important;
+}
+
+/* Mobile Side Panel Drawer */
+.side-panel-drawer {
+  background: #FFFFFF !important;
+  color: #0A0C0E !important;
+}
+
+.side-panel-header {
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+.side-panel-header .brand-name {
+  color: #0A0C0E !important;
+}
+
+.side-panel-close {
+  color: #0A0C0E !important;
+}
+
+.side-panel-section-title {
+  color: #64748B !important;
+  font-weight: 700 !important;
+}
+
+.side-panel-nav li a {
+  color: #1E293B !important;
+  font-weight: 500 !important;
+}
+
+.side-panel-nav li a:hover, .side-panel-nav li a.active {
+  color: #D97706 !important;
+  background: #FEF3C7 !important;
+}
+
+.side-panel-footer {
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+.side-panel-footer p {
+  color: #64748B !important;
+}
+
+/* Site Footer */
+.site-footer {
+  background-color: #F8FAFC !important;
+  color: #334155 !important;
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+.site-footer span, .site-footer strong, .site-footer h3, .site-footer h4, .site-footer .footer-heading,
+.footer-brand h3, .footer-brand span, .footer-col h4, .footer-column h4 {
+  color: #0F172A !important;
+}
+
+.site-footer p, .site-footer div, .site-footer li, .site-footer a {
+  color: #475569 !important;
+}
+
+.site-footer a:hover {
+  color: #D97706 !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid #E2E8F0 !important;
+  color: #64748B !important;
+}
+
+/* Universal Light Background & Footer Contrast Protection */
+.site-footer {
+  background-color: #F8FAFC !important;
+  color: #334155 !important;
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+.site-footer span, .site-footer strong, .site-footer h3, .site-footer h4, .site-footer .footer-heading,
+.footer-brand h3, .footer-brand span, .footer-col h4, .footer-column h4 {
+  color: #0F172A !important;
+}
+
+.site-footer p, .site-footer div, .site-footer li, .site-footer a {
+  color: #475569 !important;
+}
+
+.site-footer a:hover {
+  color: #0F172A !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid #E2E8F0 !important;
+  color: #64748B !important;
+}
+
+.side-panel-drawer {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+.side-panel-header .brand-name {
+  color: #0F172A !important;
+}
+
+.side-panel-close {
+  color: #0F172A !important;
+}
+
+.side-panel-section-title {
+  color: #64748B !important;
+  font-weight: 700 !important;
+}
+
+.side-panel-nav li a {
+  color: #1E293B !important;
+  font-weight: 500 !important;
+}
+
+.side-panel-footer p {
+  color: #64748B !important;
 }
